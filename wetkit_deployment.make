@@ -12,7 +12,7 @@ projects[deploy][download][type] = git
 projects[deploy][download][revision] = 5cc4fc2
 projects[deploy][download][branch] = 7.x-2.x
 projects[deploy][patch][1604938] = http://drupal.org/files/deploy-1604938_1.patch
-projects[deploy][patch][1948186] = http://drupal.org/files/deploy_allow_revision_id-1948186-2.patch
+;projects[deploy][patch][1948186] = http://drupal.org/files/deploy_allow_revision_id-1948186-2.patch
 
 projects[entity_dependency][version] = 1.x-dev
 projects[entity_dependency][subdir] = contrib
