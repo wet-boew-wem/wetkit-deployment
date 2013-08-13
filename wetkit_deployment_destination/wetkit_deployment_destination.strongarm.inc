@@ -21,12 +21,17 @@ function wetkit_deployment_destination_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'uuid_redirect_menu_paths';
-  $strongarm->value = 'node/%node/edit
+  $strongarm->value = 'block/%bean_delta/edit
+block/%bean_delta/delete
+block/%bean_delta/revisions
+node/%node/edit
 node/%node/delete
 node/%node/revisions
 taxonomy/term/%taxonomy_term/edit
 file/%file/edit
-file/%file/delete';
+file/%file/delete
+user/%user/edit
+user/%user/delete';
   $export['uuid_redirect_menu_paths'] = $strongarm;
 
   return $export;

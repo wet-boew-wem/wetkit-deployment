@@ -38,6 +38,19 @@ function wetkit_deployment_destination_default_services_endpoint() {
     ),
   );
   $endpoint->resources = array(
+    'bean' => array(
+      'operations' => array(
+        'retrieve' => array(
+          'enabled' => '1',
+        ),
+        'update' => array(
+          'enabled' => '1',
+        ),
+        'delete' => array(
+          'enabled' => '1',
+        ),
+      ),
+    ),
     'file' => array(
       'operations' => array(
         'retrieve' => array(
@@ -78,9 +91,25 @@ function wetkit_deployment_destination_default_services_endpoint() {
       ),
     ),
     'user' => array(
+      'operations' => array(
+        'retrieve' => array(
+          'enabled' => '1',
+        ),
+        'update' => array(
+          'enabled' => '1',
+        ),
+        'delete' => array(
+          'enabled' => '1',
+        ),
+      ),
       'actions' => array(
         'login' => array(
           'enabled' => '1',
+          'settings' => array(
+            'services' => array(
+              'resource_api_version' => '1.0',
+            ),
+          ),
         ),
         'logout' => array(
           'enabled' => '1',
