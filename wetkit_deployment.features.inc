@@ -9,26 +9,32 @@
  */
 function wetkit_deployment_ctools_plugin_api() {
   list($module, $api) = func_get_args();
-  if ($module == "deploy" && $api == "deploy_endpoints") {
-    return array("version" => "1");
-  }
-  list($module, $api) = func_get_args();
-  if ($module == "deploy" && $api == "deploy_plans") {
-    return array("version" => "1");
-  }
-  list($module, $api) = func_get_args();
-  if ($module == "page_manager" && $api == "pages_default") {
-    return array("version" => "1");
-  }
-  list($module, $api) = func_get_args();
-  if ($module == "quicktabs" && $api == "quicktabs") {
+  if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
 }
 
 /**
- * Implements hook_views_api().
+ * Implements hook_node_info().
  */
-function wetkit_deployment_views_api() {
-  return array("api" => "3.0");
+function wetkit_deployment_node_info() {
+  $items = array(
+    'complex_content' => array(
+      'name' => t('Complex content'),
+      'base' => 'node_content',
+      'description' => t('A complex content type with taxonomy and image fields, and with Workbench Moderation enabled.'),
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
+    'simple_content' => array(
+      'name' => t('Simple content'),
+      'base' => 'node_content',
+      'description' => t('A very simple content type, with just a body field.'),
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
+  );
+  return $items;
 }

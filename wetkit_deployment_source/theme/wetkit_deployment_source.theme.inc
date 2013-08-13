@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * wetkit_deployment.theme.inc
+ * wetkit_deployment_source.theme.inc
  */
 
 /**
@@ -85,7 +85,7 @@ function theme_wetkit_deploy_ui_overview_plan_content($variables) {
 /**
  * Themes the queue display.
  */
-function theme_wetkit_deployment_items($variables) {
+function theme_wetkit_deployment_source_items($variables) {
   // Include the CTools tools that we need.
   ctools_include('ajax');
   ctools_include('modal');
@@ -113,7 +113,7 @@ function theme_wetkit_deployment_items($variables) {
     ),
   );
   // drupal_add_js($sample_style, 'setting');
-  // ctools_add_js('wetkit-deployment-ajax', 'wetkit_deployment');
+  // ctools_add_js('wetkit-deployment-ajax', 'wetkit_deployment_source');
 
   $items = $variables['items'];
   $header = array(
@@ -134,7 +134,7 @@ function theme_wetkit_deployment_items($variables) {
       $data->__metadata['type'],
       date("Y-m-d H:i:s", $item['created']),
       $data->uuid,
-      ctools_modal_text_button(t('Show Content'), 'wetkit_deployment_ajax/nojs/1', t('Show Content'), 'ajax-processed'),
+      ctools_modal_text_button(t('Show Content'), 'wetkit_deployment_source_ajax/nojs/1', t('Show Content'), 'ajax-processed'),
     );
   }
   if (empty($rows)) {

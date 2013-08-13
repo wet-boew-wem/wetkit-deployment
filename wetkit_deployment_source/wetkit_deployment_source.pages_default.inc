@@ -1,17 +1,17 @@
 <?php
 /**
  * @file
- * wetkit_deployment.pages_default.inc
+ * wetkit_deployment_source.pages_default.inc
  */
 
 /**
  * Implements hook_default_page_manager_pages().
  */
-function wetkit_deployment_default_page_manager_pages() {
+function wetkit_deployment_source_default_page_manager_pages() {
   $page = new stdClass();
   $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
-  $page->name = 'wetkit_deployment';
+  $page->name = 'wetkit_deployment_source';
   $page->task = 'page';
   $page->admin_title = 'WetKit Deployment';
   $page->admin_description = 'Deployment Administrative Screen';
@@ -37,9 +37,9 @@ function wetkit_deployment_default_page_manager_pages() {
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
-  $handler->name = 'page_wetkit_deployment_panel_context';
+  $handler->name = 'page_wetkit_deployment_source_panel_context';
   $handler->task = 'page';
-  $handler->subtask = 'wetkit_deployment';
+  $handler->subtask = 'wetkit_deployment_source';
   $handler->handler = 'panel_context';
   $handler->weight = 0;
   $handler->conf = array(
@@ -140,7 +140,7 @@ function wetkit_deployment_default_page_manager_pages() {
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
-  $pages['wetkit_deployment'] = $page;
+  $pages['wetkit_deployment_source'] = $page;
 
   return $pages;
 

@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * wetkit_deployment.deploy_actions.inc
+ * wetkit_deployment_source.deploy_actions.inc
  */
 
 /**
  * Add a node to a deployment plan.
  */
-function wetkit_deployment_action_add_content_to_managed_plan($node, $context = array()) {
+function wetkit_deployment_source_action_add_content_to_managed_plan($node, $context = array()) {
   $context['plan'] = "wetkit_deployment";
   $deploy = deploy_plan_load($context['plan']);
   if (!$deploy) {
@@ -22,7 +22,7 @@ function wetkit_deployment_action_add_content_to_managed_plan($node, $context = 
 /**
  * Add a bean to a deployment plan.
  */
-function wetkit_deployment_action_add_bean_to_managed_plan($bean, $context = array()) {
+function wetkit_deployment_source_action_add_bean_to_managed_plan($bean, $context = array()) {
   $context['plan'] = "wetkit_deployment";
   $deploy = deploy_plan_load($context['plan']);
   if (!$deploy) {
@@ -37,7 +37,7 @@ function wetkit_deployment_action_add_bean_to_managed_plan($bean, $context = arr
 /**
  * Add a file to a deployment plan.
  */
-function wetkit_deployment_action_add_file_to_managed_plan($file, $context = array()) {
+function wetkit_deployment_source_action_add_file_to_managed_plan($file, $context = array()) {
   $context['plan'] = "wetkit_deployment";
   $deploy = deploy_plan_load($context['plan']);
   if (!$deploy) {
@@ -52,7 +52,7 @@ function wetkit_deployment_action_add_file_to_managed_plan($file, $context = arr
 /**
  * Add a term to a deployment plan.
  */
-function wetkit_deployment_action_add_term_to_managed_plan($term, $context = array()) {
+function wetkit_deployment_source_action_add_term_to_managed_plan($term, $context = array()) {
   $context['plan'] = "wetkit_deployment";
   $deploy = deploy_plan_load($context['plan']);
   if (!$deploy) {
@@ -67,7 +67,7 @@ function wetkit_deployment_action_add_term_to_managed_plan($term, $context = arr
 /**
  * Add a term to a deployment plan.
  */
-function wetkit_deployment_action_add_user_to_managed_plan($user, $context = array()) {
+function wetkit_deployment_source_action_add_user_to_managed_plan($user, $context = array()) {
   $context['plan'] = "wetkit_deployment";
   $deploy = deploy_plan_load($context['plan']);
   if (!$deploy) {
@@ -82,7 +82,7 @@ function wetkit_deployment_action_add_user_to_managed_plan($user, $context = arr
 /**
  * Delete a file from a deployment plan.
  */
-function wetkit_deployment_action_delete_bean_from_managed_plan($bean, $context = array()) {
+function wetkit_deployment_source_action_delete_bean_from_managed_plan($bean, $context = array()) {
   $context['plan'] = "wetkit_deployment";
   if (!deploy_plan_load($context['plan'])) {
     watchdog('action', 'Cannot delete from non-managed plan %name', array('%name' => $context['plan']), WATCHDOG_ERROR);
@@ -96,7 +96,7 @@ function wetkit_deployment_action_delete_bean_from_managed_plan($bean, $context 
 /**
  * Delete a file from a deployment plan.
  */
-function wetkit_deployment_action_delete_file_from_managed_plan($file, $context = array()) {
+function wetkit_deployment_source_action_delete_file_from_managed_plan($file, $context = array()) {
   $context['plan'] = "wetkit_deployment";
   if (!deploy_plan_load($context['plan'])) {
     watchdog('action', 'Cannot delete from non-managed plan %name', array('%name' => $context['plan']), WATCHDOG_ERROR);
@@ -110,7 +110,7 @@ function wetkit_deployment_action_delete_file_from_managed_plan($file, $context 
 /**
  * Delete a term from a deployment plan.
  */
-function wetkit_deployment_action_delete_term_from_managed_plan($term, $context = array()) {
+function wetkit_deployment_source_action_delete_term_from_managed_plan($term, $context = array()) {
   $context['plan'] = "wetkit_deployment";
   if (!deploy_plan_load($context['plan'])) {
     watchdog('action', 'Cannot delete from non-managed plan %name', array('%name' => $context['plan']), WATCHDOG_ERROR);
@@ -124,7 +124,7 @@ function wetkit_deployment_action_delete_term_from_managed_plan($term, $context 
 /**
  * Delete a term from a deployment plan.
  */
-function wetkit_deployment_action_delete_user_from_managed_plan($user, $context = array()) {
+function wetkit_deployment_source_action_delete_user_from_managed_plan($user, $context = array()) {
   $context['plan'] = "wetkit_deployment";
   if (!deploy_plan_load($context['plan'])) {
     watchdog('action', 'Cannot delete from non-managed plan %name', array('%name' => $context['plan']), WATCHDOG_ERROR);
@@ -138,7 +138,7 @@ function wetkit_deployment_action_delete_user_from_managed_plan($user, $context 
 /**
  * Delete a node from a deployment plan.
  */
-function wetkit_deployment_action_delete_content_from_managed_plan($node, $context = array()) {
+function wetkit_deployment_source_action_delete_content_from_managed_plan($node, $context = array()) {
   $context['plan'] = "wetkit_deployment";
   if (!deploy_plan_load($context['plan'])) {
     watchdog('action', 'Cannot delete from non-managed plan %name', array('%name' => $context['plan']), WATCHDOG_ERROR);

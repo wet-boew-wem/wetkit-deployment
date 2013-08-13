@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * wetkit_deployment.views_default.inc
+ * wetkit_deployment_source.views_default.inc
  */
 
 /**
  * Implements hook_views_default_views().
  */
-function wetkit_deployment_views_default_views() {
+function wetkit_deployment_source_views_default_views() {
   $export = array();
 
   $view = new view();
@@ -60,14 +60,14 @@ function wetkit_deployment_views_default_views() {
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '10';
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
-    'action::wetkit_deployment_action_add_bean_to_managed_plan' => array(
+    'action::wetkit_deployment_source_action_add_bean_to_managed_plan' => array(
       'selected' => 1,
       'postpone_processing' => 0,
       'skip_confirmation' => 1,
       'override_label' => 0,
       'label' => '',
     ),
-    'action::wetkit_deployment_action_delete_bean_from_managed_plan' => array(
+    'action::wetkit_deployment_source_action_delete_bean_from_managed_plan' => array(
       'selected' => 1,
       'postpone_processing' => 0,
       'skip_confirmation' => 1,
@@ -323,7 +323,7 @@ function wetkit_deployment_views_default_views() {
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '10';
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
-    'action::wetkit_deployment_action_add_file_to_managed_plan' => array(
+    'action::wetkit_deployment_source_action_add_file_to_managed_plan' => array(
       'selected' => 1,
       'postpone_processing' => 0,
       'skip_confirmation' => 1,
@@ -341,7 +341,7 @@ function wetkit_deployment_views_default_views() {
         'temporary' => 1,
       ),
     ),
-    'action::wetkit_deployment_action_delete_file_from_managed_plan' => array(
+    'action::wetkit_deployment_source_action_delete_file_from_managed_plan' => array(
       'selected' => 1,
       'postpone_processing' => 0,
       'skip_confirmation' => 1,
@@ -657,7 +657,7 @@ function wetkit_deployment_views_default_views() {
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '10';
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
-    'action::wetkit_deployment_action_add_content_to_managed_plan' => array(
+    'action::wetkit_deployment_source_action_add_content_to_managed_plan' => array(
       'selected' => 1,
       'postpone_processing' => 0,
       'skip_confirmation' => 1,
@@ -671,7 +671,7 @@ function wetkit_deployment_views_default_views() {
       'override_label' => 1,
       'label' => 'Change author',
     ),
-    'action::wetkit_deployment_action_delete_content_from_managed_plan' => array(
+    'action::wetkit_deployment_source_action_delete_content_from_managed_plan' => array(
       'selected' => 1,
       'postpone_processing' => 0,
       'skip_confirmation' => 1,
@@ -798,7 +798,7 @@ function wetkit_deployment_views_default_views() {
       'override_label' => 0,
       'label' => '',
     ),
-    'rules_component::rules_wetkit_deployment' => array(
+    'rules_component::rules_wetkit_deployment_source' => array(
       'selected' => 0,
       'postpone_processing' => 0,
       'skip_confirmation' => 0,
@@ -1023,7 +1023,7 @@ function wetkit_deployment_views_default_views() {
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '10';
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
-    'action::wetkit_deployment_action_add_term_to_managed_plan' => array(
+    'action::wetkit_deployment_source_action_add_term_to_managed_plan' => array(
       'selected' => 1,
       'postpone_processing' => 0,
       'skip_confirmation' => 1,
@@ -1037,7 +1037,7 @@ function wetkit_deployment_views_default_views() {
       'override_label' => 0,
       'label' => '',
     ),
-    'action::wetkit_deployment_action_delete_term_from_managed_plan' => array(
+    'action::wetkit_deployment_source_action_delete_term_from_managed_plan' => array(
       'selected' => 1,
       'postpone_processing' => 0,
       'skip_confirmation' => 1,
@@ -1304,7 +1304,7 @@ function wetkit_deployment_views_default_views() {
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '10';
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
-    'action::wetkit_deployment_action_add_user_to_managed_plan' => array(
+    'action::wetkit_deployment_source_action_add_user_to_managed_plan' => array(
       'selected' => 1,
       'postpone_processing' => 0,
       'skip_confirmation' => 1,
@@ -1325,7 +1325,7 @@ function wetkit_deployment_views_default_views() {
       'override_label' => 1,
       'label' => 'Delete',
     ),
-    'action::wetkit_deployment_action_delete_user_from_managed_plan' => array(
+    'action::wetkit_deployment_source_action_delete_user_from_managed_plan' => array(
       'selected' => 1,
       'postpone_processing' => 0,
       'skip_confirmation' => 1,

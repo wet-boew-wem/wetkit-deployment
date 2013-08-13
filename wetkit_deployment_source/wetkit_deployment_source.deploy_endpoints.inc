@@ -1,0 +1,50 @@
+<?php
+/**
+ * @file
+ * wetkit_deployment_source.deploy_endpoints.inc
+ */
+
+/**
+ * Implements hook_deploy_endpoints_default().
+ */
+function wetkit_deployment_source_deploy_endpoints_default() {
+  $export = array();
+
+  $endpoint = new DeployEndpoint();
+  $endpoint->disabled = FALSE; /* Edit this to true to make a default endpoint disabled initially */
+  $endpoint->api_version = 1;
+  $endpoint->name = 'destination_site_endpoint';
+  $endpoint->title = 'Destination Site';
+  $endpoint->description = 'Deployment endpoint for a particular destination site.';
+  $endpoint->debug = 0;
+  $endpoint->authenticator_plugin = 'DeployAuthenticatorSession';
+  $endpoint->authenticator_config = array(
+    'username' => 'admin',
+    'password' => 'WetKit2013',
+  );
+  $endpoint->service_plugin = 'DeployServiceRestJSON';
+  $endpoint->service_config = array(
+    'url' => 'http://normandy-dest.dev/services/rest',
+  );
+  $export['destination_site_endpoint'] = $endpoint;
+
+  $endpoint = new DeployEndpoint();
+  $endpoint->disabled = FALSE; /* Edit this to true to make a default endpoint disabled initially */
+  $endpoint->api_version = 1;
+  $endpoint->name = 'wetkit_prod_server';
+  $endpoint->title = 'WetKit Deployment Production Server';
+  $endpoint->description = 'Endpoint related to the WetKit Deployment production server.';
+  $endpoint->debug = 0;
+  $endpoint->authenticator_plugin = 'DeployAuthenticatorSession';
+  $endpoint->authenticator_config = array(
+    'username' => 'admin',
+    'password' => 'WetKit2013',
+  );
+  $endpoint->service_plugin = 'DeployServiceRestJSON';
+  $endpoint->service_config = array(
+    'url' => 'http://normandy.dev:8080/services/rest',
+  );
+  $export['wetkit_prod_server'] = $endpoint;
+
+  return $export;
+}

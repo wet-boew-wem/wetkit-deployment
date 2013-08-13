@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Deployed content destination site feature.
+ */
+
+include_once 'wetkit_deployment_destination.features.inc';

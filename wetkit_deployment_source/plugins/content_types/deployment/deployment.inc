@@ -14,22 +14,22 @@ $plugin = array(
   'title' => t('Deployment Staging Area'),
   'icon' => 'icon_form.png',
   'description' => t('WetKit Deployment rendered form for Deployment information.'),
-  'render callback' => 'wetkit_deployment_deployment_content_type_render',
-  'edit form' => 'wetkit_deployment_deployment_edit_form',
+  'render callback' => 'wetkit_deployment_source_deployment_content_type_render',
+  'edit form' => 'wetkit_deployment_source_deployment_edit_form',
   'category' => t('Deployment'),
 );
 
 /**
  * Admin title callback for the content type.
  */
-function wetkit_deployment_deployment_content_type_admin_title($subtype = NULL, $conf = NULL, $context = NULL) {
+function wetkit_deployment_source_deployment_content_type_admin_title($subtype = NULL, $conf = NULL, $context = NULL) {
   return t('Deployment Staging Area');
 }
 
 /**
  * Admin info callback for the content type.
  */
-function wetkit_deployment_deployment_content_type_admin_info($subtype = NULL, $conf = NULL, $context = NULL) {
+function wetkit_deployment_source_deployment_content_type_admin_info($subtype = NULL, $conf = NULL, $context = NULL) {
   $block = new stdClass();
   $block->title = t('Deployment Staging Area');
 
@@ -39,7 +39,7 @@ function wetkit_deployment_deployment_content_type_admin_info($subtype = NULL, $
 /**
  * Run-time rendering of the body of the block.
  */
-function wetkit_deployment_deployment_content_type_render($subtype, $conf, $panel_args, &$context) {
+function wetkit_deployment_source_deployment_content_type_render($subtype, $conf, $panel_args, &$context) {
   $plans = deploy_plan_load_all();
   $blocks = array();
   global $user;
@@ -91,7 +91,7 @@ function wetkit_deployment_deployment_content_type_render($subtype, $conf, $pane
   }
 
   $block = new stdClass();
-  $block->module = t('wetkit_deployment');
+  $block->module = t('wetkit_deployment_source');
   $block->title = t('Deployment Staging Area');
   $block->content = theme('wetkit_deploy_ui_overview', array('blocks' => $blocks));
 
@@ -101,7 +101,7 @@ function wetkit_deployment_deployment_content_type_render($subtype, $conf, $pane
 /**
  * Edit callback edit form for the content type.
  */
-function wetkit_deployment_deployment_edit_form($form, &$form_state) {
+function wetkit_deployment_source_deployment_edit_form($form, &$form_state) {
 
   return $form;
 }

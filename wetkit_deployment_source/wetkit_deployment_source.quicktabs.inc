@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * wetkit_deployment.quicktabs.inc
+ * wetkit_deployment_source.quicktabs.inc
  */
 
 /**
  * Implements hook_quicktabs_default_quicktabs().
  */
-function wetkit_deployment_quicktabs_default_quicktabs() {
+function wetkit_deployment_source_quicktabs_default_quicktabs() {
   $export = array();
 
   $quicktabs = new stdClass();
