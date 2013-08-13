@@ -21,11 +21,11 @@ function wetkit_deployment_source_ctools_plugin_api() {
     return array("version" => "1");
   }
   list($module, $api) = func_get_args();
-  if ($module == "strongarm" && $api == "strongarm") {
+  if ($module == "quicktabs" && $api == "quicktabs") {
     return array("version" => "1");
   }
   list($module, $api) = func_get_args();
-  if ($module == "quicktabs" && $api == "quicktabs") {
+  if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
 }

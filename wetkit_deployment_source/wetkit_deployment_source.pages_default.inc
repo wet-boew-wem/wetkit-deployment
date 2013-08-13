@@ -16,7 +16,10 @@ function wetkit_deployment_source_default_page_manager_pages() {
   $page->admin_title = 'WetKit Deployment';
   $page->admin_description = 'Deployment Administrative Screen';
   $page->path = 'admin/dashboard/deployment';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array(
     'type' => 'tab',
     'title' => 'Deployment',

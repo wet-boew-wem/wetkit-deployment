@@ -27,6 +27,12 @@ function wetkit_deployment_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 1,
       ),
+      'link' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'preview' => array(
         'label' => 'above',
         'settings' => array(),
@@ -45,6 +51,7 @@ function wetkit_deployment_field_default_field_instances() {
     'label' => 'Deployed content',
     'required' => 0,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
       'wysiwyg_override' => 0,
     ),
@@ -76,6 +83,12 @@ function wetkit_deployment_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 1,
       ),
+      'link' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'preview' => array(
         'label' => 'above',
         'settings' => array(),
@@ -94,6 +107,7 @@ function wetkit_deployment_field_default_field_instances() {
     'label' => 'Deployed content',
     'required' => 0,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
       'wysiwyg_override' => 0,
     ),
@@ -125,6 +139,12 @@ function wetkit_deployment_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 1,
       ),
+      'link' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'preview' => array(
         'label' => 'above',
         'settings' => array(),
@@ -143,6 +163,7 @@ function wetkit_deployment_field_default_field_instances() {
     'label' => 'Deployed content',
     'required' => 0,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
       'wysiwyg_override' => 0,
     ),
@@ -174,6 +195,12 @@ function wetkit_deployment_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 1,
       ),
+      'link' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'preview' => array(
         'label' => 'above',
         'settings' => array(),
@@ -192,6 +219,7 @@ function wetkit_deployment_field_default_field_instances() {
     'label' => 'Deployed content',
     'required' => 0,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
       'wysiwyg_override' => 0,
     ),
@@ -220,6 +248,12 @@ function wetkit_deployment_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 1,
       ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -236,6 +270,7 @@ function wetkit_deployment_field_default_field_instances() {
     'required' => FALSE,
     'settings' => array(
       'display_summary' => TRUE,
+      'entity_translation_sync' => FALSE,
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
@@ -266,6 +301,12 @@ function wetkit_deployment_field_default_field_instances() {
         'type' => 'image',
         'weight' => 0,
       ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'hidden',
         'module' => 'file_entity',
@@ -283,6 +324,7 @@ function wetkit_deployment_field_default_field_instances() {
     'settings' => array(
       'alt_field' => 0,
       'default_image' => 0,
+      'entity_translation_sync' => FALSE,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
@@ -330,6 +372,12 @@ function wetkit_deployment_field_default_field_instances() {
         'type' => 'taxonomy_term_reference_link',
         'weight' => 2,
       ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'hidden',
         'module' => 'taxonomy',
@@ -343,6 +391,7 @@ function wetkit_deployment_field_default_field_instances() {
     'label' => 'Tags',
     'required' => 0,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -371,6 +420,12 @@ function wetkit_deployment_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 0,
       ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -387,6 +442,7 @@ function wetkit_deployment_field_default_field_instances() {
     'required' => FALSE,
     'settings' => array(
       'display_summary' => TRUE,
+      'entity_translation_sync' => FALSE,
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
@@ -404,9 +460,9 @@ function wetkit_deployment_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Body');
+  t('Deployed content');
   t('Hidden field which is sent to other sites to track that this item came from the source site.');
   t('Image');
-  t('Deployed content');
   t('Tags');
 
   return $field_instances;

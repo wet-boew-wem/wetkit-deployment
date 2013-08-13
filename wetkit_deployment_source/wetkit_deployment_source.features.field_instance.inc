@@ -27,6 +27,12 @@ function wetkit_deployment_source_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 4,
       ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -39,6 +45,7 @@ function wetkit_deployment_source_field_default_field_instances() {
     'label' => 'Deploy this content to the Destination Site',
     'required' => 0,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -69,6 +76,12 @@ function wetkit_deployment_source_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 3,
       ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -81,6 +94,7 @@ function wetkit_deployment_source_field_default_field_instances() {
     'label' => 'Deployed content',
     'required' => 0,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -111,6 +125,12 @@ function wetkit_deployment_source_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 2,
       ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -123,6 +143,7 @@ function wetkit_deployment_source_field_default_field_instances() {
     'label' => 'Deploy this content to the Destination Site',
     'required' => 0,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -153,6 +174,12 @@ function wetkit_deployment_source_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 1,
       ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -165,6 +192,7 @@ function wetkit_deployment_source_field_default_field_instances() {
     'label' => 'Deployed content',
     'required' => 0,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -195,12 +223,19 @@ function wetkit_deployment_source_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 1,
       ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'taxonomy_term',
     'field_name' => 'field_shared_content',
     'label' => 'Deployed content',
     'required' => 0,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -217,8 +252,8 @@ function wetkit_deployment_source_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Deploy this content to the Destination Site');
-  t('Hidden field which is sent to other sites to track that this item came from the source site.');
   t('Deployed content');
+  t('Hidden field which is sent to other sites to track that this item came from the source site.');
 
   return $field_instances;
 }
