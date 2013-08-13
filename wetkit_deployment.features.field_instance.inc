@@ -234,9 +234,9 @@ function wetkit_deployment_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-complex_content-body'
-  $field_instances['node-complex_content-body'] = array(
-    'bundle' => 'complex_content',
+  // Exported field_instance: 'node-deploy_content_moderated-body'
+  $field_instances['node-deploy_content_moderated-body'] = array(
+    'bundle' => 'deploy_content_moderated',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -285,9 +285,9 @@ function wetkit_deployment_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-complex_content-field_image'
-  $field_instances['node-complex_content-field_image'] = array(
-    'bundle' => 'complex_content',
+  // Exported field_instance: 'node-deploy_content_moderated-field_image'
+  $field_instances['node-deploy_content_moderated-field_image'] = array(
+    'bundle' => 'deploy_content_moderated',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -358,9 +358,9 @@ function wetkit_deployment_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-complex_content-field_tags'
-  $field_instances['node-complex_content-field_tags'] = array(
-    'bundle' => 'complex_content',
+  // Exported field_instance: 'node-deploy_content_moderated-field_tags'
+  $field_instances['node-deploy_content_moderated-field_tags'] = array(
+    'bundle' => 'deploy_content_moderated',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -406,9 +406,9 @@ function wetkit_deployment_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-simple_content-body'
-  $field_instances['node-simple_content-body'] = array(
-    'bundle' => 'simple_content',
+  // Exported field_instance: 'node-deploy_content_simple-body'
+  $field_instances['node-deploy_content_simple-body'] = array(
+    'bundle' => 'deploy_content_simple',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',

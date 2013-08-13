@@ -19,18 +19,18 @@ function wetkit_deployment_ctools_plugin_api() {
  */
 function wetkit_deployment_node_info() {
   $items = array(
-    'complex_content' => array(
-      'name' => t('Complex content'),
+    'deploy_content_moderated' => array(
+      'name' => t('Deploy (moderated)'),
       'base' => 'node_content',
-      'description' => t('A complex content type with taxonomy and image fields, and with Workbench Moderation enabled.'),
+      'description' => t('Deploy a workbench moderated content type with additional fields.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',
     ),
-    'simple_content' => array(
-      'name' => t('Simple content'),
+    'deploy_content_simple' => array(
+      'name' => t('Deploy (simple)'),
       'base' => 'node_content',
-      'description' => t('A very simple content type, with just a body field.'),
+      'description' => t('Deploy a very simple content type, with just a body field.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',

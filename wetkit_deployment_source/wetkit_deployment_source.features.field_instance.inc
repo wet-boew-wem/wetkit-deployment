@@ -10,9 +10,9 @@
 function wetkit_deployment_source_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-complex_content-field_deploy_to_destination_site'
-  $field_instances['node-complex_content-field_deploy_to_destination_site'] = array(
-    'bundle' => 'complex_content',
+  // Exported field_instance: 'node-deploy_content_moderated-field_deploy_to_destination_site'
+  $field_instances['node-deploy_content_moderated-field_deploy_to_destination_site'] = array(
+    'bundle' => 'deploy_content_moderated',
     'default_value' => array(
       0 => array(
         'value' => 0,
@@ -59,9 +59,9 @@ function wetkit_deployment_source_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-complex_content-field_shared_content'
-  $field_instances['node-complex_content-field_shared_content'] = array(
-    'bundle' => 'complex_content',
+  // Exported field_instance: 'node-deploy_content_moderated-field_shared_content'
+  $field_instances['node-deploy_content_moderated-field_shared_content'] = array(
+    'bundle' => 'deploy_content_moderated',
     'default_value' => array(
       0 => array(
         'value' => 1,
@@ -108,9 +108,9 @@ function wetkit_deployment_source_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-simple_content-field_deploy_to_destination_site'
-  $field_instances['node-simple_content-field_deploy_to_destination_site'] = array(
-    'bundle' => 'simple_content',
+  // Exported field_instance: 'node-deploy_content_simple-field_deploy_to_destination_site'
+  $field_instances['node-deploy_content_simple-field_deploy_to_destination_site'] = array(
+    'bundle' => 'deploy_content_simple',
     'default_value' => array(
       0 => array(
         'value' => 0,
@@ -157,9 +157,9 @@ function wetkit_deployment_source_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-simple_content-field_shared_content'
-  $field_instances['node-simple_content-field_shared_content'] = array(
-    'bundle' => 'simple_content',
+  // Exported field_instance: 'node-deploy_content_simple-field_shared_content'
+  $field_instances['node-deploy_content_simple-field_shared_content'] = array(
+    'bundle' => 'deploy_content_simple',
     'default_value' => array(
       0 => array(
         'value' => 1,
