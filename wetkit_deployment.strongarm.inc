@@ -254,6 +254,48 @@ function wetkit_deployment_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'i18n_node_extended_complex_content';
+  $strongarm->value = 1;
+  $export['i18n_node_extended_complex_content'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'i18n_node_extended_simple_content';
+  $strongarm->value = 1;
+  $export['i18n_node_extended_simple_content'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'i18n_node_options_complex_content';
+  $strongarm->value = array();
+  $export['i18n_node_options_complex_content'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'i18n_node_options_simple_content';
+  $strongarm->value = array();
+  $export['i18n_node_options_simple_content'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'language_content_type_complex_content';
+  $strongarm->value = '0';
+  $export['language_content_type_complex_content'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'language_content_type_simple_content';
+  $strongarm->value = '0';
+  $export['language_content_type_simple_content'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'media__file_extensions';
   $strongarm->value = 'jpg jpeg gif png txt doc docx xls xlsx pdf ppt pptx pps ppsx odt ods odp mp3 mov mp4 m4a m4v mpeg avi ogg oga ogv wmv ico';
   $export['media__file_extensions'] = $strongarm;
@@ -295,9 +337,8 @@ function wetkit_deployment_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'node_options_complex_content';
   $strongarm->value = array(
-    0 => 'promote',
-    1 => 'moderation',
-    2 => 'revision',
+    0 => 'moderation',
+    1 => 'revision',
   );
   $export['node_options_complex_content'] = $strongarm;
 
@@ -307,7 +348,6 @@ function wetkit_deployment_strongarm() {
   $strongarm->name = 'node_options_simple_content';
   $strongarm->value = array(
     0 => 'status',
-    1 => 'promote',
   );
   $export['node_options_simple_content'] = $strongarm;
 
@@ -329,14 +369,14 @@ function wetkit_deployment_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_submitted_complex_content';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['node_submitted_complex_content'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_submitted_simple_content';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['node_submitted_simple_content'] = $strongarm;
 
   return $export;
