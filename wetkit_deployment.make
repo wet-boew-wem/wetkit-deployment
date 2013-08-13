@@ -17,7 +17,7 @@ projects[deploy][patch][1948186] = http://drupal.org/files/deploy_allow_revision
 projects[deploy_services_client][version] = 1.0-beta1
 projects[deploy_services_client][subdir] = deployment
 projects[deploy_services_client][type] = module
-projects[deploy_services_client][patch][2063517] = https://drupal.org/files/services_csrf_fix-2063517-01.patch
+projects[deploy_services_client][patch][2063517] = http://drupal.org/files/services_csrf_fix-2063517-01.patch
 
 projects[entity_dependency][version] = 1.x-dev
 projects[entity_dependency][subdir] = deployment
