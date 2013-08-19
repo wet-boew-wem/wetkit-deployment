@@ -24,12 +24,14 @@ function wetkit_deployment_destination_strongarm() {
   $strongarm->value = 'block/%bean_delta/edit
 block/%bean_delta/delete
 block/%bean_delta/revisions
+menu/item/%menu_link/edit
+menu/item/%menu_link/delete
 node/%node/edit
 node/%node/delete
 node/%node/revisions
-taxonomy/term/%taxonomy_term/edit
 file/%file/edit
 file/%file/delete
+taxonomy/term/%taxonomy_term/edit
 user/%user/edit
 user/%user/delete';
   $export['uuid_redirect_menu_paths'] = $strongarm;

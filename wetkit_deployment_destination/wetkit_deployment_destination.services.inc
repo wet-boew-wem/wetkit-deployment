@@ -51,6 +51,19 @@ function wetkit_deployment_destination_default_services_endpoint() {
         ),
       ),
     ),
+    'menu_link' => array(
+      'operations' => array(
+        'retrieve' => array(
+          'enabled' => '1',
+        ),
+        'update' => array(
+          'enabled' => '1',
+        ),
+        'delete' => array(
+          'enabled' => '1',
+        ),
+      ),
+    ),
     'file' => array(
       'operations' => array(
         'retrieve' => array(
@@ -86,6 +99,11 @@ function wetkit_deployment_destination_default_services_endpoint() {
           'enabled' => '1',
         ),
         'delete' => array(
+          'enabled' => '1',
+        ),
+      ),
+      'actions' => array(
+        'reorder_terms' => array(
           'enabled' => '1',
         ),
       ),
