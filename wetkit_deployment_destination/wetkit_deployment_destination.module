@@ -5,3 +5,4 @@
  */
 
 include_once 'wetkit_deployment_destination.features.inc';
+include_once 'wetkit_deployment_destination.uuid_taxonomy_services.inc';
