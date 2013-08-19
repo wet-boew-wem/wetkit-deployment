@@ -43,6 +43,33 @@ function wetkit_deployment_source_menu() {
 }
 
 /**
+ * Implements hook_entity_insert().
+ */
+function wetkit_deployment_source_entity_insert($entity, $type) {
+  _wetkit_deployment_source_entity_insert_or_update($entity, $type);
+}
+
+/**
+ * Implements hook_entity_update().
+ */
+function wetkit_deployment_source_entity_update($entity, $type) {
+  _wetkit_deployment_source_entity_insert_or_update($entity, $type);
+}
+
+/**
+ * Helper for hook_entity_insert() and hook_entity_update().
+ *
+ * @throws Exception
+ */
+function _wetkit_deployment_source_entity_insert_or_update($entity, $type) {
+  if (module_exists('shared_content_source') && $type == 'menu_link') {
+    $entity_wrapper = entity_metadata_wrapper($type, $entity);
+    $plan = deploy_manager_plan_load('destination_site_plan');
+    shared_content_source_add_to_plan_and_deploy($plan, $entity_wrapper);
+  }
+}
+
+/**
  * Page callback for the simplest introduction menu entry.
  *
  * @param object $context

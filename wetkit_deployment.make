@@ -40,6 +40,7 @@ projects[entity_menu_links][type] = module
 projects[entity_menu_links][download][type] = git
 projects[entity_menu_links][download][revision] = 9dd1dd7
 projects[entity_menu_links][download][branch] = 7.x-1.x
+projects[entity_menu_links][patch][2063419] = http://drupal.org/files/postgresql_issues-2063419-01.patch
 
 projects[quicktabs][version] = 3.x-dev
 projects[quicktabs][subdir] = deployment
