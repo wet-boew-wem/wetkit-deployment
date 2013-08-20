@@ -24,7 +24,7 @@ function wetkit_deployment_source_deploy_endpoints_default() {
   );
   $endpoint->service_plugin = 'DeployServiceRestJSON';
   $endpoint->service_config = array(
-    'url' => 'http://normandy-dest.dev/services/rest',
+    'url' => 'http://normandy.prod:8080/services/rest',
   );
   $export['destination_site_endpoint'] = $endpoint;
 
@@ -42,7 +42,7 @@ function wetkit_deployment_source_deploy_endpoints_default() {
   );
   $endpoint->service_plugin = 'DeployServiceRestJSON';
   $endpoint->service_config = array(
-    'url' => 'http://normandy.dev:8080/services/rest',
+    'url' => 'http://normandy.prod:8080/services/rest',
   );
   $export['wetkit_prod_server'] = $endpoint;
 
