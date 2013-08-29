@@ -41,12 +41,15 @@ function wetkit_deployment_source_deployment_content_type_admin_info($subtype = 
  */
 function wetkit_deployment_source_deployment_content_type_render($subtype, $conf, $panel_args, &$context) {
   $plans = deploy_plan_load_all();
+
+  // Unset non bundled deployment from this screen.
+  unset($plans['destination_site_plan']);
+
   $blocks = array();
   global $user;
 
   // Iterate over all plans.
   foreach ($plans as $plan) {
-    if ($user->uid == $plan->deploy_by_user) {
       $info = array();
 
       // Get the entity keys from the aggregator.
@@ -87,7 +90,6 @@ function wetkit_deployment_source_deployment_content_type_render($subtype, $conf
         'fetch_only' => $plan->fetch_only,
         'status' => deploy_plan_get_status($plan->name),
       );
-    }
   }
 
   $block = new stdClass();

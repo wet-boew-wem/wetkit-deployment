@@ -24,7 +24,7 @@ function theme_wetkit_deploy_ui_overview($variables) {
     foreach ($blocks as $block) {
       $status_info = deploy_status_info($block['status']);
 
-      $output .= '<div class="' . $position . ' clearfix">';
+      $output .= '<div class="clearfix">';
       $output .= '<div class="admin-panel deploy-panel">';
       $output .= '<h3>' . $block['plan_title'] . '</h3>';
       if (!$block['fetch_only'] && $status_info) {

@@ -22,13 +22,15 @@
 .queue-items {
  color: red;
 }
-.pane-deployment .pane-content .left {
-  width: 100%;
+
+.pane-deployment {
+  margin-top: 1.3em;
 }
 
-.pane-deployment .deploy-panel {
-  border: 1px solid #ccc;
+.form-item-queue-name {
+  padding: 1em;
 }
+
 .pane-deployment .deploy-panel .description {
   margin: 0px 10px;
 }
@@ -51,9 +53,9 @@
 }
 
 .pane-deployment .deploy-panel h3 {
-margin: 0px;
-padding: 0px 0px 0px 10px;
-font-size: 11px;
+  margin: 0px;
+  padding: 0px 0px 0px 10px;
+  font-size: 1.6em;
 }
 
 .pane-deployment .deploy-panel table {
@@ -74,7 +76,7 @@ font-size: 11px;
   margin: 20px 0px 0px 0px;
 }
 
-.form-item-string-to-add, div.form-item-claim-time { 
+.form-item-string-to-add, div.form-item-claim-time {
   display: inline;
 }
 
