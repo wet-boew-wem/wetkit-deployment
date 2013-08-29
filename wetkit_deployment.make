@@ -6,7 +6,7 @@ core = 7.x
 ; Modules for WetKit Deployment
 
 projects[deploy][version] = 2.x-dev
-projects[deploy][subdir] = deployment
+projects[deploy][subdir] = contrib
 projects[deploy][type] = module
 projects[deploy][download][type] = git
 projects[deploy][download][revision] = ecb9568
@@ -15,12 +15,12 @@ projects[deploy][patch][1604938] = http://drupal.org/files/deploy-1604938_1.patc
 projects[deploy][patch][1948186] = http://drupal.org/files/deploy_allow_revision_id-1948186-2.patch
 
 projects[deploy_services_client][version] = 1.0-beta1
-projects[deploy_services_client][subdir] = deployment
+projects[deploy_services_client][subdir] = contrib
 projects[deploy_services_client][type] = module
 projects[deploy_services_client][patch][2063517] = http://drupal.org/files/services_csrf_fix-2063517-01.patch
 
 projects[entity_dependency][version] = 1.x-dev
-projects[entity_dependency][subdir] = deployment
+projects[entity_dependency][subdir] = contrib
 projects[entity_dependency][type] = module
 projects[entity_dependency][download][type] = git
 projects[entity_dependency][download][revision] = 7ca711a
@@ -35,22 +35,31 @@ projects[entity_dependency][patch][2051811] = http://drupal.org/files/2051811-en
 ;projects[entity_dependency][patch][1545278] = http://drupal.org/files/1545278-entity_dependency_entity_reference_fix-13.patch
 
 projects[entity_menu_links][version] = 1.x-dev
-projects[entity_menu_links][subdir] = deployment
+projects[entity_menu_links][subdir] = contrib
 projects[entity_menu_links][type] = module
 projects[entity_menu_links][download][type] = git
 projects[entity_menu_links][download][revision] = 9dd1dd7
 projects[entity_menu_links][download][branch] = 7.x-1.x
 projects[entity_menu_links][patch][2063419] = http://drupal.org/files/postgresql_issues-2063419-01.patch
 
+projects[environment_indicator][version] = 2.x-dev
+projects[environment_indicator][type] = module
+projects[environment_indicator][subdir] = contrib
+projects[environment_indicator][download][type] = git
+projects[environment_indicator][download][revision] = 1c38b79
+projects[environment_indicator][download][branch] = 7.x-2.x
+projects[environment_indicator][patch][2001076] = http://drupal.org/files/syntax-error-during-installation-2001076-3.patch
+projects[environment_indicator][patch][2042011] = http://drupal.org/files/doesnt_update_properly_with_admin_menu_enabled-2042011-1.patch
+
 projects[quicktabs][version] = 3.x-dev
-projects[quicktabs][subdir] = deployment
+projects[quicktabs][subdir] = contrib
 projects[quicktabs][type] = module
 projects[quicktabs][download][type] = git
 projects[quicktabs][download][revision] = 89f7fd0
 projects[quicktabs][download][branch] = 7.x-3.x
 
 projects[services][version] = 3.x-dev
-projects[services][subdir] = deployment
+projects[services][subdir] = contrib
 projects[services][type] = module
 projects[services][download][type] = git
 projects[services][download][revision] = 492920e
@@ -58,28 +67,28 @@ projects[services][download][branch] = 7.x-3.x
 projects[services][patch][2048529] = http://drupal.org/files/services-php-notice-2048529-1.patch
 
 projects[shared_content][version] = 1.x-dev
-projects[shared_content][subdir] = deployment
+projects[shared_content][subdir] = contrib
 projects[shared_content][type] = module
 projects[shared_content][download][type] = git
 projects[shared_content][download][revision] = b2c81aa
 projects[shared_content][download][branch] = 7.x-1.x
 
 projects[uuid_link][version] = 1.x-dev
-projects[uuid_link][subdir] = deployment
+projects[uuid_link][subdir] = contrib
 projects[uuid_link][type] = module
 projects[uuid_link][download][type] = git
 projects[uuid_link][download][revision] = dd716df
 projects[uuid_link][download][branch] = 7.x-1.x
 
 projects[uuid_redirect][version] = 1.x-dev
-projects[uuid_redirect][subdir] = deployment
+projects[uuid_redirect][subdir] = contrib
 projects[uuid_redirect][type] = module
 projects[uuid_redirect][download][type] = git
 projects[uuid_redirect][download][revision] = ce1ab849
 projects[uuid_redirect][download][branch] = 7.x-1.x
 
 projects[linkit_uuid][version] = 1.x-dev
-projects[linkit_uuid][subdir] = deployment
+projects[linkit_uuid][subdir] = contrib
 projects[linkit_uuid][type] = module
 projects[linkit_uuid][download][type] = git
 projects[linkit_uuid][download][revision] = 09e0c94
