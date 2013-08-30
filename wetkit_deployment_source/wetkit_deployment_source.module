@@ -7,6 +7,7 @@
 include_once 'wetkit_deployment_source.features.inc';
 include_once 'wetkit_deployment_source.deploy_actions.inc';
 include_once 'wetkit_deployment_source.deploy_queue.inc';
+include_once 'wetkit_deployment_source.deploy_menu.inc';
 include_once 'wetkit_deployment_source.uuid_taxonomy_services.inc';
 include_once 'theme/wetkit_deployment_source.theme.inc';
 
@@ -63,9 +64,11 @@ function wetkit_deployment_source_entity_update($entity, $type) {
  */
 function _wetkit_deployment_source_entity_insert_or_update($entity, $type) {
   if (module_exists('shared_content_source') && $type == 'menu_link') {
-    $entity_wrapper = entity_metadata_wrapper($type, $entity);
-    $plan = deploy_manager_plan_load('destination_site_plan');
-    shared_content_source_add_to_plan_and_deploy($plan, $entity_wrapper);
+    if (isset($entity->options['deploy_attributes']['deploy_menu_item']['yes'])) {
+      $entity_wrapper = entity_metadata_wrapper($type, $entity);
+      $plan = deploy_manager_plan_load('destination_site_plan');
+      shared_content_source_add_to_plan_and_deploy($plan, $entity_wrapper);
+    }
   }
 }
 
