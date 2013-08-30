@@ -22,6 +22,7 @@ dependencies[] = uuid_path
 dependencies[] = uuid_redirect
 dependencies[] = views_content
 dependencies[] = wetkit_deployment
+dependencies[] = wetkit_deployment_environment
 dependencies[] = workbench
 dependencies[] = workbench_moderation
 features[ctools][] = deploy:deploy_endpoints:1

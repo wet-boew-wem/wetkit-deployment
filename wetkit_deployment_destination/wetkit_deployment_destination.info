@@ -22,6 +22,7 @@ dependencies[] = uuid_path
 dependencies[] = uuid_redirect
 dependencies[] = uuid_services
 dependencies[] = wetkit_deployment
+dependencies[] = wetkit_deployment_environment
 features[ctools][] = services:services:3
 features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2

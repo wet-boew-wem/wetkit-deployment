@@ -32,7 +32,7 @@ function wetkit_deployment_environment_default_environment_indicator_environment
   $environment->regexurl = 'prod';
   $environment->settings = array(
     'color' => '#A33',
-    'weight' => '11',
+    'weight' => '9',
     'position' => 'top',
     'fixed' => 0,
   );
@@ -46,7 +46,7 @@ function wetkit_deployment_environment_default_environment_indicator_environment
   $environment->regexurl = 'qa';
   $environment->settings = array(
     'color' => '#F9AD81',
-    'weight' => '12',
+    'weight' => '9',
     'position' => 'top',
     'fixed' => 0,
   );
