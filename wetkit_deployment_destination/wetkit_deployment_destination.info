@@ -39,6 +39,7 @@ features[field_instance][] = file-video-field_shared_content
 features[field_instance][] = node-deploy_content_moderated-field_shared_content
 features[field_instance][] = node-deploy_content_simple-field_shared_content
 features[field_instance][] = taxonomy_term-tags-field_shared_content
+features[field_instance][] = user-user-field_shared_content
 features[services_endpoint][] = destination_site_endpoint
 features[user_permission][] = administer taxonomy
 features[user_permission][] = bypass file access

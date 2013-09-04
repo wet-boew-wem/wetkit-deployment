@@ -51,6 +51,7 @@ features[field_instance][] = node-deploy_content_moderated-field_shared_content
 features[field_instance][] = node-deploy_content_simple-field_deploy_to_destination_site
 features[field_instance][] = node-deploy_content_simple-field_shared_content
 features[field_instance][] = taxonomy_term-tags-field_shared_content
+features[field_instance][] = user-user-field_shared_content
 features[page_manager_pages][] = wetkit_deployment_source
 features[quicktabs][] = deployment_quicktabs
 features[variable][] = workbench_moderation_default_state_deploy_content_moderated
