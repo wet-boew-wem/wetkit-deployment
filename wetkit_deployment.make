@@ -5,6 +5,9 @@ core = 7.x
 
 ; Modules for WetKit Deployment
 
+projects[configuration][version] = 2.0-alpha3
+projects[configuration][subdir] = contrib
+
 projects[deploy][version] = 2.x-dev
 projects[deploy][subdir] = contrib
 projects[deploy][type] = module
@@ -41,6 +44,7 @@ projects[entity_menu_links][download][type] = git
 projects[entity_menu_links][download][revision] = 9dd1dd7
 projects[entity_menu_links][download][branch] = 7.x-1.x
 projects[entity_menu_links][patch][2063419] = http://drupal.org/files/postgresql_issues-2063419-01.patch
+projects[entity_menu_links][patch][2081901] = http://drupal.org/files/entity_menu_links_i18n-2081901-04.patch
 
 projects[environment_indicator][version] = 2.x-dev
 projects[environment_indicator][type] = module
@@ -50,6 +54,13 @@ projects[environment_indicator][download][revision] = 1c38b79
 projects[environment_indicator][download][branch] = 7.x-2.x
 projects[environment_indicator][patch][2001076] = http://drupal.org/files/syntax-error-during-installation-2001076-3.patch
 projects[environment_indicator][patch][2042011] = http://drupal.org/files/doesnt_update_properly_with_admin_menu_enabled-2042011-1.patch
+
+projects[linkit_uuid][version] = 1.x-dev
+projects[linkit_uuid][subdir] = contrib
+projects[linkit_uuid][type] = module
+projects[linkit_uuid][download][type] = git
+projects[linkit_uuid][download][revision] = 09e0c94
+projects[linkit_uuid][download][branch] = 7.x-1.x
 
 projects[quicktabs][version] = 3.x-dev
 projects[quicktabs][subdir] = contrib
@@ -87,9 +98,5 @@ projects[uuid_redirect][download][type] = git
 projects[uuid_redirect][download][revision] = ce1ab849
 projects[uuid_redirect][download][branch] = 7.x-1.x
 
-projects[linkit_uuid][version] = 1.x-dev
-projects[linkit_uuid][subdir] = contrib
-projects[linkit_uuid][type] = module
-projects[linkit_uuid][download][type] = git
-projects[linkit_uuid][download][revision] = 09e0c94
-projects[linkit_uuid][download][branch] = 7.x-1.x
+projects[xautoload][version] = 3.2
+projects[xautoload][subdir] = contrib
