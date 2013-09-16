@@ -22,7 +22,7 @@ function wetkit_deployment_source_deploy_endpoints_default() {
     'username' => 'admin',
     'password' => 'WetKit2013',
   );
-  $endpoint->service_plugin = 'DeployServiceRestJSON';
+  $endpoint->service_plugin = 'WetKitServiceRestJSON';
   $endpoint->service_config = array(
     'url' => 'http://normandy.prod:8080/services/rest',
   );
@@ -40,7 +40,7 @@ function wetkit_deployment_source_deploy_endpoints_default() {
     'username' => 'admin',
     'password' => 'WetKit2013',
   );
-  $endpoint->service_plugin = 'DeployServiceRestJSON';
+  $endpoint->service_plugin = 'WetKitServiceRestJSON';
   $endpoint->service_config = array(
     'url' => 'http://normandy.prod:8080/services/rest',
   );

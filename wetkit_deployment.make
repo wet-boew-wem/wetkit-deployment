@@ -45,6 +45,7 @@ projects[entity_menu_links][download][revision] = 9dd1dd7
 projects[entity_menu_links][download][branch] = 7.x-1.x
 projects[entity_menu_links][patch][2063419] = http://drupal.org/files/postgresql_issues-2063419-01.patch
 projects[entity_menu_links][patch][2081901] = http://drupal.org/files/entity_menu_links_i18n-2081901-04.patch
+projects[entity_menu_links][patch][2090403] = http://drupal.org/files/entity_menu_links_system_path-2090403-1.patch
 
 projects[environment_indicator][version] = 2.x-dev
 projects[environment_indicator][type] = module

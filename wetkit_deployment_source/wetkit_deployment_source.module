@@ -178,6 +178,24 @@ function wetkit_deployment_source_deploy_processors() {
 }
 
 /**
+ * Implements hook_deploy_services().
+ */
+function wetkit_deployment_deploy_services() {
+  $path = drupal_get_path('module', 'wetkit_deployment_source') . '/plugins/deployment';
+  return array(
+    'WetKitServiceRestJSON' => array(
+      'name' => 'WetKit REST JSON',
+      'description' => 'Deploys multilingual data over a REST service that can receive JSON data. Works well when the endpoint happens to be a Drupal sites using Services module with REST server.',
+      'handler' => array(
+        'class' => 'WetKitServiceRestJSON',
+        'file' => 'WetKitServiceRestJSON.inc',
+        'path' => $path,
+      ),
+    ),
+  );
+}
+
+/**
  * Implements hook_cron_queue_info().
  */
 function wetkit_deployment_source_cron_queue_info() {
