@@ -26,6 +26,7 @@ function wetkit_deployment_source_deploy_plans_default() {
   $plan->processor_config = array();
   $plan->endpoints = array(
     'destination_site_endpoint' => 'destination_site_endpoint',
+    'wetkit_prod_server' => 0,
   );
   $export['destination_site_plan'] = $plan;
 

@@ -59,7 +59,7 @@ function wetkit_deployment_source_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'bean-wetkit_bean-field_shared_content'
+  // Exported field_instance: 'bean-wetkit_highlight-field_shared_content'
   $field_instances['bean-wetkit_highlight-field_shared_content'] = array(
     'bundle' => 'wetkit_highlight',
     'default_value' => array(
@@ -108,7 +108,7 @@ function wetkit_deployment_source_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'bean-wetkit_bean-field_shared_content'
+  // Exported field_instance: 'bean-wetkit_rate-field_shared_content'
   $field_instances['bean-wetkit_rate-field_shared_content'] = array(
     'bundle' => 'wetkit_rate',
     'default_value' => array(
@@ -157,7 +157,7 @@ function wetkit_deployment_source_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'bean-wetkit_bean-field_shared_content'
+  // Exported field_instance: 'bean-wetkit_search-field_shared_content'
   $field_instances['bean-wetkit_search-field_shared_content'] = array(
     'bundle' => 'wetkit_search',
     'default_value' => array(
@@ -206,7 +206,7 @@ function wetkit_deployment_source_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'bean-wetkit_bean-field_shared_content'
+  // Exported field_instance: 'bean-wetkit_share-field_shared_content'
   $field_instances['bean-wetkit_share-field_shared_content'] = array(
     'bundle' => 'wetkit_share',
     'default_value' => array(
@@ -255,7 +255,7 @@ function wetkit_deployment_source_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'bean-wetkit_bean-field_shared_content'
+  // Exported field_instance: 'bean-wetkit_twitter-field_shared_content'
   $field_instances['bean-wetkit_twitter-field_shared_content'] = array(
     'bundle' => 'wetkit_twitter',
     'default_value' => array(
@@ -339,6 +339,12 @@ function wetkit_deployment_source_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'wysiwyg' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'file',
     'field_name' => 'field_shared_content',
@@ -390,6 +396,12 @@ function wetkit_deployment_source_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'wysiwyg' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -451,6 +463,12 @@ function wetkit_deployment_source_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'wysiwyg' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'file',
     'field_name' => 'field_shared_content',
@@ -502,6 +520,12 @@ function wetkit_deployment_source_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'wysiwyg' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
