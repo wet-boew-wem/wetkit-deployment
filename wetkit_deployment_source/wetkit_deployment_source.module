@@ -93,9 +93,9 @@ function _wetkit_deployment_source_deploy($context = NULL) {
  * Implements hook_deploy_operation_info_alter().
  */
 function wetkit_deployment_deploy_operation_info_alter(&$operations) {
-  foreach ($operations as $key => $value) {
-    if ($value == 'shared_content_source_deploy_postprocess') {
-      unset($operations[$key]);
+  foreach ($operations['postprocess'] as $key => $value) {
+    if ($value['callback'] == 'shared_content_source_deploy_postprocess') {
+      unset($operations['postprocess'][$key]);
     }
   }
 }
