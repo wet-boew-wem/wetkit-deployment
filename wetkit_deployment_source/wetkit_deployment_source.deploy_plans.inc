@@ -26,7 +26,7 @@ function wetkit_deployment_source_deploy_plans_default() {
   $plan->processor_config = array();
   $plan->endpoints = array(
     'destination_site_endpoint' => 'destination_site_endpoint',
-    'wetkit_prod_server' => 0,
+    'destination_site_batch_endpoint' => 0,
   );
   $export['destination_site_plan'] = $plan;
 
@@ -34,8 +34,8 @@ function wetkit_deployment_source_deploy_plans_default() {
   $plan->disabled = FALSE; /* Edit this to true to make a default plan disabled initially */
   $plan->api_version = 1;
   $plan->name = 'wetkit_deployment';
-  $plan->title = 'Staging Area (Per User)';
-  $plan->description = 'Deployment functionality that assists in moving uuid controlled entities from Staging to Production.';
+  $plan->title = 'Destination Site (Batch)';
+  $plan->description = 'Deploys content to a particular destination site.';
   $plan->debug = 0;
   $plan->aggregator_plugin = 'WetKitDeployAggregatorManaged';
   $plan->aggregator_config = array(
@@ -45,7 +45,8 @@ function wetkit_deployment_source_deploy_plans_default() {
   $plan->processor_plugin = 'WetKitDeployProcessorQueue';
   $plan->processor_config = array();
   $plan->endpoints = array(
-    'wetkit_prod_server' => 'wetkit_prod_server',
+    'destination_site_endpoint' => 0,
+    'destination_site_batch_endpoint' => 'destination_site_batch_endpoint',
   );
   $export['wetkit_deployment'] = $plan;
 

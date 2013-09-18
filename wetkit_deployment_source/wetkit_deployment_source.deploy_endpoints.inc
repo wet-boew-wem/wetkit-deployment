@@ -31,9 +31,9 @@ function wetkit_deployment_source_deploy_endpoints_default() {
   $endpoint = new DeployEndpoint();
   $endpoint->disabled = FALSE; /* Edit this to true to make a default endpoint disabled initially */
   $endpoint->api_version = 1;
-  $endpoint->name = 'wetkit_prod_server';
+  $endpoint->name = 'destination_site_batch_endpoint';
   $endpoint->title = 'WetKit Deployment Production Server';
-  $endpoint->description = 'Endpoint related to the WetKit Deployment production server.';
+  $endpoint->description = 'Deployment endpoint for a particular destination site.';
   $endpoint->debug = 0;
   $endpoint->authenticator_plugin = 'DeployAuthenticatorSession';
   $endpoint->authenticator_config = array(
@@ -44,7 +44,7 @@ function wetkit_deployment_source_deploy_endpoints_default() {
   $endpoint->service_config = array(
     'url' => 'http://normandy.prod:8080/services/rest',
   );
-  $export['wetkit_prod_server'] = $endpoint;
+  $export['destination_site_batch_endpoint'] = $endpoint;
 
   return $export;
 }

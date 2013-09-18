@@ -40,7 +40,7 @@ function theme_wetkit_deploy_ui_overview($variables) {
       if (!$block['fetch_only']) {
         $actions = array(
           array(
-            'title' => t('Add to Deployment'),
+            'title' => t('Deploy'),
             'href' => 'admin/dashboard/deployment/deploy',
             'query' => array(
               'cancel_path' => $_GET['q'],

@@ -81,11 +81,22 @@ function _wetkit_deployment_source_entity_insert_or_update($entity, $type) {
 function _wetkit_deployment_source_deploy($context = NULL) {
   global $user;
   $deploy = deploy_plan_load($context);
-  if ($user->uid == $deploy->deploy_by_user) {
+  //if ($user->uid == $deploy->deploy_by_user) {
     if ($deploy) {
       $deploy->deploy();
     }
     drupal_goto('admin/dashboard/deployment');
+  //}
+}
+
+/**
+ * Implements hook_deploy_operation_info_alter().
+ */
+function wetkit_deployment_deploy_operation_info_alter(&$operations) {
+  foreach ($operations as $key => $value) {
+    if ($value == 'shared_content_source_deploy_postprocess') {
+      unset($operations[$key]);
+    }
   }
 }
 
