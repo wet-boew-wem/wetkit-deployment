@@ -210,6 +210,12 @@ function wetkit_deployment_strongarm() {
         'description' => array(
           'weight' => '0',
         ),
+        'metatags' => array(
+          'weight' => '4',
+        ),
+        'path' => array(
+          'weight' => '3',
+        ),
       ),
       'display' => array(
         'description' => array(
