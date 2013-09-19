@@ -22,15 +22,11 @@ class WetKitDeployAggregatorManaged extends DeployAggregatorBase {
    * Constructor.
    */
   public function __construct(DeployPlan $plan = NULL, Array $config = array()) {
-    global $user;
     $this->config += array(
       'debug' => FALSE,
       'delete_post_deploy' => FALSE,
     );
     $this->config = array_merge($this->config, $config);
-
-    // Lets allow deployment by user.
-    $plan->deploy_by_user = $user->uid;
     $this->plan = $plan;
   }
 

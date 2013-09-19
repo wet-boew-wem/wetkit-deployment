@@ -213,10 +213,6 @@ function wetkit_deployment_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Body');
-  t('Deployed content');
-  t('Hidden field which is sent to other sites to track that this item came from the source site.');
-  t('Image');
-  t('Tags');
   t('Title');
 
   return $field_instances;

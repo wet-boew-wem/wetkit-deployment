@@ -83,37 +83,15 @@ function theme_wetkit_deploy_ui_overview_plan_content($variables) {
 }
 
 /**
- * Themes the queue display.
+ * Theme the queue display.
  */
 function theme_wetkit_deployment_source_items($variables) {
-  // Include the CTools tools that we need.
+  // Include the CTools functionality that we need.
   ctools_include('ajax');
   ctools_include('modal');
 
   // Add CTools' javascript to the page.
   ctools_modal_add_js();
-
-  // Create our own javascript that will be used to theme a modal.
-  $sample_style = array(
-    'ctools-sample-style' => array(
-      'modalSize' => array(
-        'type' => 'fixed',
-        'width' => 500,
-        'height' => 300,
-        'addWidth' => 20,
-        'addHeight' => 15,
-      ),
-      'modalOptions' => array(
-        'opacity' => .5,
-        'background-color' => '#000',
-      ),
-      'animation' => 'fadeIn',
-      'modalTheme' => 'CToolsWetKitModal',
-      'throbber' => theme('image', array('path' => ctools_image_path('ajax-loader.gif', 'ctools_ajax_sample'), 'alt' => t('Loading...'), 'title' => t('Loading'))),
-    ),
-  );
-  // drupal_add_js($sample_style, 'setting');
-  // ctools_add_js('wetkit-deployment-ajax', 'wetkit_deployment_source');
 
   $items = $variables['items'];
   $header = array(
@@ -130,7 +108,7 @@ function theme_wetkit_deployment_source_items($variables) {
     $data = unserialize($item['data']);
     $rows[] = array(
       $item['item_id'],
-      isset($data->title) ? $data->title : $data->name,
+      isset($data->title) ? $data->title : '',
       $data->__metadata['type'],
       date("Y-m-d H:i:s", $item['created']),
       $data->uuid,

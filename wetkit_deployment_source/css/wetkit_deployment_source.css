@@ -10,10 +10,12 @@
 
 .pane-content [for="edit-queue-name"] {
  float:left;
+ margin-left: 0px;
  margin-right: 10px;
  text-transform: none;
  font-size: 12px;
  font-weight: normal;
+ margin-top: 1em;
 }
 .queue-title {
  margin-bottom: 20px;
@@ -38,6 +40,19 @@
 .pane-queue #wetkit-deployment-add-remove-form {
   margin-left: 0px;
   margin-right: 0px;
+}
+
+.pane-queue .pane-content h3 {
+  margin-left: 0px;
+  border-bottom: 1px solid #ddd;
+  text-transform: uppercase;
+  font-weight: 200;
+}
+
+.pane-queue .pane-content form {
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 40px;
 }
 
 .pane-queue input.form-submit {

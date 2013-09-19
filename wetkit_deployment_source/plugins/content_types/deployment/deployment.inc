@@ -46,7 +46,6 @@ function wetkit_deployment_source_deployment_content_type_render($subtype, $conf
   unset($plans['destination_site_plan']);
 
   $blocks = array();
-  global $user;
 
   // Iterate over all plans.
   foreach ($plans as $plan) {

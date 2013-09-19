@@ -19,37 +19,30 @@ function wetkit_deployment_source_add_remove_form($form, &$form_state) {
   // Add CSS to make the form a bit denser.
   $form['#attached']['css'] = array(drupal_get_path('module', 'wetkit_deployment_source') . '/css/wetkit_deployment_source.css');
 
-  $form['status_fieldset'] = array(
-    '#type' => 'fieldset',
-    '#title' => t('Deployment Area (All Users)'),
-    '#collapsible' => TRUE,
+  $form['queue_title'] = array(
+    '#markup' => '<h3>Deployment (Batch)</h3>',
   );
-  $form['status_fieldset']['queue_name'] = array(
+  $form['queue_name'] = array(
     '#type' => 'select',
     '#title' => t('Current queue:'),
-    '#options' => drupal_map_assoc(array('wetkit_deploy', 'wetkit_publish')),
+    '#options' => drupal_map_assoc(array('wetkit_deploy')),
   );
-  $form['status_fieldset']['status'] = array(
+  $form['status'] = array(
     '#prefix' => '<div id="queue-table">',
     '#type' => 'markup',
     '#markup' => theme('wetkit_deployment_source_items', array('items' => $items)),
     '#suffix' => '</div><div class="clear"></div>',
   );
-  $form['status_fieldset']['run_cron'] = array(
+  $form['run_cron'] = array(
     '#type' => 'submit',
     '#value' => t('Deploy all items'),
     '#submit' => array('wetkit_deployment_source_add_remove_form_run_cron'),
     '#attributes' => array('class' => array('button-confirm')),
   );
-  $form['status_fieldset']['delete_queue'] = array(
+  $form['delete_queue'] = array(
     '#type' => 'submit',
     '#value' => t('Delete all items'),
     '#submit' => array('wetkit_deployment_source_add_remove_form_clear_queue'),
-  );
-  $form['status_fieldset']['delete_item'] = array(
-    '#type' => 'submit',
-    '#value' => t('Delete next item'),
-    '#submit' => array('wetkit_deployment_source_add_remove_form_delete'),
   );
 
   return $form;

@@ -16,6 +16,7 @@ projects[deploy][download][revision] = ecb9568
 projects[deploy][download][branch] = 7.x-2.x
 projects[deploy][patch][1604938] = http://drupal.org/files/deploy-1604938_1.patch
 projects[deploy][patch][1948186] = http://drupal.org/files/deploy_allow_revision_id-1948186-2.patch
+projects[deploy][patch][2092335] = http://drupal.org/files/deploy_new_alter_hook-2092335-1.patch
 
 projects[deploy_services_client][version] = 1.0-beta1
 projects[deploy_services_client][subdir] = contrib
@@ -56,13 +57,6 @@ projects[environment_indicator][download][branch] = 7.x-2.x
 projects[environment_indicator][patch][2001076] = http://drupal.org/files/syntax-error-during-installation-2001076-3.patch
 projects[environment_indicator][patch][2042011] = http://drupal.org/files/doesnt_update_properly_with_admin_menu_enabled-2042011-1.patch
 
-projects[linkit_uuid][version] = 1.x-dev
-projects[linkit_uuid][subdir] = contrib
-projects[linkit_uuid][type] = module
-projects[linkit_uuid][download][type] = git
-projects[linkit_uuid][download][revision] = 09e0c94
-projects[linkit_uuid][download][branch] = 7.x-1.x
-
 projects[quicktabs][version] = 3.x-dev
 projects[quicktabs][subdir] = contrib
 projects[quicktabs][type] = module
@@ -84,13 +78,6 @@ projects[shared_content][type] = module
 projects[shared_content][download][type] = git
 projects[shared_content][download][revision] = b2c81aa
 projects[shared_content][download][branch] = 7.x-1.x
-
-projects[uuid_link][version] = 1.x-dev
-projects[uuid_link][subdir] = contrib
-projects[uuid_link][type] = module
-projects[uuid_link][download][type] = git
-projects[uuid_link][download][revision] = dd716df
-projects[uuid_link][download][branch] = 7.x-1.x
 
 projects[uuid_redirect][version] = 1.x-dev
 projects[uuid_redirect][subdir] = contrib

@@ -17,6 +17,8 @@ function wetkit_deployment_source_action_add_content_to_managed_plan($node, $con
   deploy_manager_add_to_plan($context['plan'], 'node', $node);
 
   watchdog('action', 'Added node !nid to deployment plan @plan.', array('!nid' => $node->nid, '@plan' => $context['plan']), WATCHDOG_NOTICE);
+
+  _deploy_http_request($node->nid, $context['plan']);
 }
 
 /**
@@ -32,6 +34,8 @@ function wetkit_deployment_source_action_add_bean_to_managed_plan($bean, $contex
   deploy_manager_add_to_plan($context['plan'], 'bean', $bean);
 
   watchdog('action', 'Added node !bid to deployment plan @plan.', array('!bid' => $bean->bid, '@plan' => $context['plan']), WATCHDOG_NOTICE);
+
+  _deploy_http_request($node->nid, $context['plan']);
 }
 
 /**
@@ -47,6 +51,8 @@ function wetkit_deployment_source_action_add_file_to_managed_plan($file, $contex
   deploy_manager_add_to_plan($context['plan'], 'file', $file);
 
   watchdog('action', 'Added node !fid to deployment plan @plan.', array('!fid' => $file->fid, '@plan' => $context['plan']), WATCHDOG_NOTICE);
+
+  _deploy_http_request($node->nid, $context['plan']);
 }
 
 /**
@@ -62,6 +68,8 @@ function wetkit_deployment_source_action_add_term_to_managed_plan($term, $contex
   deploy_manager_add_to_plan($context['plan'], 'taxonomy_term', $term);
 
   watchdog('action', 'Added node !tid to deployment plan @plan.', array('!tid' => $term->tid, '@plan' => $context['plan']), WATCHDOG_NOTICE);
+
+  _deploy_http_request($node->nid, $context['plan']);
 }
 
 /**
@@ -77,6 +85,8 @@ function wetkit_deployment_source_action_add_user_to_managed_plan($user, $contex
   deploy_manager_add_to_plan($context['plan'], 'user', $user);
 
   watchdog('action', 'Added node !uid to deployment plan @plan.', array('!uid' => $user->uid, '@plan' => $context['plan']), WATCHDOG_NOTICE);
+
+  _deploy_http_request($node->nid, $context['plan']);
 }
 
 /**
@@ -147,4 +157,18 @@ function wetkit_deployment_source_action_delete_content_from_managed_plan($node,
   deploy_manager_delete_from_plan($context['plan'], 'node', $node);
 
   watchdog('action', 'Deleted node !nid from deployment plan @plan.', array('!nid' => $node->nid, '@plan' => $context['plan']), WATCHDOG_NOTICE);
+}
+
+/**
+ * Custom deployment http request handler.
+ */
+function _deploy_http_request($nid, $plan) {
+  global $base_url;
+  $url = $base_url . '/admin/dashboard/deployment/deploy';
+  $data = array(
+    'cancel_path' => 'admin/dashboard/deployment',
+  );
+  $full_url = url($url, array('query' => $data));
+  drupal_http_request($full_url);
+  watchdog('action', 'Added node !nid to queue for plan: @plan.', array('!nid' => $nid, '@plan' => $plan), WATCHDOG_NOTICE);
 }

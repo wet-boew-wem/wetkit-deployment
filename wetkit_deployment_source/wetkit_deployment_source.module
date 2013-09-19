@@ -44,6 +44,17 @@ function wetkit_deployment_source_menu() {
 }
 
 /**
+ * Implements hook_deploy_operation_info_alter().
+ */
+function wetkit_deployment_deploy_operation_info_alter(&$operations) {
+  foreach ($operations['postprocess'] as $key => $value) {
+    if ($value['callback'] == 'shared_content_source_deploy_postprocess') {
+      unset($operations['postprocess'][$key]);
+    }
+  }
+}
+
+/**
  * Implements hook_entity_insert().
  */
 function wetkit_deployment_source_entity_insert($entity, $type) {
@@ -79,32 +90,11 @@ function _wetkit_deployment_source_entity_insert_or_update($entity, $type) {
  *   Some content passed in.
  */
 function _wetkit_deployment_source_deploy($context = NULL) {
-  global $user;
   $deploy = deploy_plan_load($context);
-  //if ($user->uid == $deploy->deploy_by_user) {
-    if ($deploy) {
-      $deploy->deploy();
-    }
-    drupal_goto('admin/dashboard/deployment');
-  //}
-}
-
-/**
- * Implements hook_deploy_operation_info_alter().
- */
-function wetkit_deployment_deploy_operation_info_alter(&$operations) {
-  foreach ($operations['postprocess'] as $key => $value) {
-    if ($value['callback'] == 'shared_content_source_deploy_postprocess') {
-      unset($operations['postprocess'][$key]);
-    }
+  if ($deploy) {
+    $deploy->deploy();
   }
-}
-
-/**
- * Implements hook_ajax_render_alter().
- */
-function wetkit_deployment_source_ajax_render_alter(&$commands) {
-  // unset($commands[1]);
+  drupal_goto('admin/dashboard/deployment');
 }
 
 /**
@@ -118,21 +108,44 @@ function wetkit_deployment_source_ajax_render_alter(&$commands) {
  * @return string
  *   The contents of the node, that will fill the modal window.
  */
-function _wetkit_deployment_source_modal($js = NULL, $nid = NULL) {
-  if ($nid == NULL) {
+function _wetkit_deployment_source_modal($js = NULL, $entity_id = NULL) {
+  global $language;
+  $title = '';
+  $output = '';
+
+  if ($entity_id == NULL) {
     // You can customize the string below, or use a drupal_goto() to
     // send the user to a custom error page.
-    return 'No node id was sent. Error.';
+    return t('No entity id was sent to be loaded.');
   }
+
   if ($js) {
     // Required includes for ctools to work:
     ctools_include('ajax');
     ctools_include('modal');
   }
-  // Load the node object.
-  $node = node_load($nid);
 
-  return ctools_modal_render($node->title, '<p>Sample Body Content</p>');
+  // Load the entity object.
+  $query = new EntityFieldQuery();
+
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('entity_id', $entity_id, '=');
+
+  $result = $query->execute();
+
+  if (isset($result['node'])) {
+    $entity_nids = array_keys($result['node']);
+    $entities = entity_load('node', $entity_nids);
+    foreach ($entities as $item) {
+      $title = $item->title_field[$language->language][0]['value'];
+      $output = $item->body[$language->language][0]['value'];
+    }
+  }
+  else {
+    return t('Nothing was returned by the Entity Field Query.');
+  }
+
+  return ctools_modal_render($title, $output);
 }
 
 /**
@@ -302,52 +315,27 @@ function wetkit_deployment_source_action_info() {
   $actions = array();
   $actions['wetkit_deployment_source_action_add_content_to_managed_plan'] = array(
     'type' => 'node',
-    'label' => t('Add content to staging area'),
-    'configurable' => FALSE,
-  );
-  $actions['wetkit_deployment_source_action_delete_content_from_managed_plan'] = array(
-    'type' => 'node',
-    'label' => t('Delete content from staging area'),
+    'label' => t('Add content to queue'),
     'configurable' => FALSE,
   );
   $actions['wetkit_deployment_source_action_add_bean_to_managed_plan'] = array(
     'type' => 'bean',
-    'label' => t('Add bean to staging area'),
-    'configurable' => FALSE,
-  );
-  $actions['wetkit_deployment_source_action_delete_bean_from_managed_plan'] = array(
-    'type' => 'bean',
-    'label' => t('Delete bean from staging area'),
+    'label' => t('Add bean to queue'),
     'configurable' => FALSE,
   );
   $actions['wetkit_deployment_source_action_add_file_to_managed_plan'] = array(
     'type' => 'file',
-    'label' => t('Add file to staging area'),
-    'configurable' => FALSE,
-  );
-  $actions['wetkit_deployment_source_action_delete_file_from_managed_plan'] = array(
-    'type' => 'file',
-    'label' => t('Delete file from staging area'),
+    'label' => t('Add file to queue'),
     'configurable' => FALSE,
   );
   $actions['wetkit_deployment_source_action_add_term_to_managed_plan'] = array(
     'type' => 'taxonomy_term',
-    'label' => t('Add term to staging area'),
-    'configurable' => FALSE,
-  );
-  $actions['wetkit_deployment_source_action_delete_term_from_managed_plan'] = array(
-    'type' => 'taxonomy_term',
-    'label' => t('Delete term from staging area'),
+    'label' => t('Add term to queue'),
     'configurable' => FALSE,
   );
   $actions['wetkit_deployment_source_action_add_user_to_managed_plan'] = array(
     'type' => 'user',
-    'label' => t('Add user to staging area'),
-    'configurable' => FALSE,
-  );
-  $actions['wetkit_deployment_source_action_delete_user_from_managed_plan'] = array(
-    'type' => 'user',
-    'label' => t('Delete user from staging area'),
+    'label' => t('Add user to queue'),
     'configurable' => FALSE,
   );
   return $actions;
