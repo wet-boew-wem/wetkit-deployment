@@ -46,9 +46,9 @@ function wetkit_deployment_source_menu() {
 /**
  * Implements hook_deploy_operation_info_alter().
  */
-function wetkit_deployment_deploy_operation_info_alter(&$operations) {
+function wetkit_deployment_deploy_operation_info_alter(&$operations, $plan_name = NULL) {
   foreach ($operations['postprocess'] as $key => $value) {
-    if ($value['callback'] == 'shared_content_source_deploy_postprocess') {
+    if ($value['callback'] == 'shared_content_source_deploy_postprocess' && $plan_name != 'destination_site_plan') {
       unset($operations['postprocess'][$key]);
     }
   }

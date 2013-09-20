@@ -16,7 +16,8 @@ projects[deploy][download][revision] = ecb9568
 projects[deploy][download][branch] = 7.x-2.x
 projects[deploy][patch][1604938] = http://drupal.org/files/deploy-1604938_1.patch
 projects[deploy][patch][1948186] = http://drupal.org/files/deploy_allow_revision_id-1948186-2.patch
-projects[deploy][patch][2092335] = https://drupal.org/files/deploy_new_alter_hook-2092335-2.patch
+projects[deploy][patch][2052767] = http://drupal.org/files/deploy-undefined_variable_user-2052767-3.patch
+projects[deploy][patch][2092335] = https://drupal.org/files/deploy_new_alter_hook-2092335-4.patch
 
 projects[deploy_services_client][version] = 1.0-beta1
 projects[deploy_services_client][subdir] = contrib
