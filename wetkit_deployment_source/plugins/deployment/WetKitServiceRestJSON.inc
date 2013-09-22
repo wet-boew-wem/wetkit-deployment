@@ -10,9 +10,14 @@ class WetKitServiceRestJSON extends DeployServiceRest {
       $json_data = drupal_json_encode($entity);
       $this->config['headers']['Content-Type'] = 'application/json';
 
+      // Language Handling for Entity Translation.
       if (function_exists('entity_translation_enabled') && entity_translation_enabled($entity->__metadata['type'], $entity, TRUE)) {
         global $language;
         $tmp_url = parse_url($this->config['url']);
+
+        if ((substr($tmp_url['path'], 0, 3) == '/en') || (substr($tmp_url['path'], 0, 3) == '/fr')) {
+          $tmp_url['path'] = substr($tmp_url['path'], 3);
+        }
         $tmp_url['path'] = '/' . $language->language . $tmp_url['path'];
         $this->config['url'] = $this->unparse_url($tmp_url);
       }
