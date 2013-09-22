@@ -36,7 +36,6 @@ class WetKitServiceRestJSON extends DeployServiceRest {
 
       // TODO: Consider making the resource path configurable.
       $url = $this->config['url'] . '/' . $entity->__metadata['uri'] . '/publish';
-      //$this->httpRequest($url, 'POST');
     }
   }
 

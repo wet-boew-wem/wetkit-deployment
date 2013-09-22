@@ -42,7 +42,6 @@ function wetkit_deployment_taxonomy_overview_terms_submit($form, &$form_state) {
   // The interesting code is below. You'd probably run it only after checking
   // that the vocabulary identified by $vid is actually one you want to
   // propagate to the target site.
-
   // Force a static cache reset before propagating the changes, since the
   // submit handlers which ran before this one may have updated things in the
   // database without clearing static caches.
@@ -68,7 +67,7 @@ function wetkit_deployment_taxonomy_overview_terms_submit($form, &$form_state) {
  * This is useful for code which wants to prepare an array of terms before
  * sending it to the Services resource defined by this module on another site.
  *
- * @return
+ * @return array
  *   An array of partial term objects with 'uuid', 'weight', and 'parent_uuids'
  *   properties, suitable to send to uuid_taxonomy_services_reorder_terms() via
  *   this module's Services resource.

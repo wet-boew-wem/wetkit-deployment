@@ -34,7 +34,7 @@ function wetkit_deployment_destination_services_resources() {
 /**
  * Services callback to reorder a set of taxonomy terms.
  *
- * @return
+ * @return array
  *   An array of term UUIDs which were actually updated as a result of the
  *   reordering.
  *
@@ -53,7 +53,7 @@ function _wetkit_deployment_destination_reorder_terms_callback($terms) {
 /**
  * Reorders a set of taxonomy terms.
  *
- * @param $terms
+ * @param array $terms
  *   An array of term objects as returned by uuid_taxonomy_services_get_tree().
  *   Each object should have the following properties:
  *   - uuid: The UUID of the term.
@@ -64,7 +64,7 @@ function _wetkit_deployment_destination_reorder_terms_callback($terms) {
  *     saved with no parents. If not provided, the term's parents will not be
  *     updated.
  *
- * @return
+ * @return array
  *   An array of term UUIDs which were actually updated as a result of the
  *   reordering.
  *

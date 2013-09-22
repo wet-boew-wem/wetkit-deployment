@@ -102,7 +102,7 @@ function _wetkit_deployment_source_deploy($context = NULL) {
  *
  * @param bool $js
  *   Determine whether the user's browser is javascript enabled.
- * @param int $nid
+ * @param int $entity_id
  *   The node ID of passed as an argument from the hook_menu() path
  *
  * @return string

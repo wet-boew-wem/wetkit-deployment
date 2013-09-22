@@ -40,7 +40,7 @@ function wetkit_deployment_source_deploy_attribute_info() {
     'form' => array(
       '#type' => 'checkboxes',
       '#options' => array(
-        'yes' => 'Deploy this menu item to the Destination Site',
+        'yes' => t('Deploy this menu item to the Destination Site'),
       ),
       '#weight' => 10,
     ),
@@ -144,7 +144,8 @@ function _wetkit_deployment_source_form_alter(array &$form, array $item = array(
   }
 
   // Add form values for the reset of $item['options'] and
-  // $item['options']['deploy_attributes'] so the values will carry over during save.
+  // $item['options']['deploy_attributes'] so the values will carry over
+  // during save.
   foreach ($item['options'] as $key => $value) {
     if ($key !== 'attributes' && !isset($form['options'][$key])) {
       $form['options'][$key] = array(
