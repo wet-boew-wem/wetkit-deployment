@@ -37,11 +37,11 @@ function wetkit_deployment_source_add_remove_form($form, &$form_state) {
     '#type' => 'submit',
     '#value' => t('Deploy all items'),
     '#submit' => array('wetkit_deployment_source_add_remove_form_run_cron'),
-    '#attributes' => array('class' => array('button-confirm')),
+    '#attributes' => array('class' => array('button-alert')),
   );
   $form['delete_queue'] = array(
     '#type' => 'submit',
-    '#value' => t('Delete all items'),
+    '#value' => t('Remove all items'),
     '#submit' => array('wetkit_deployment_source_add_remove_form_clear_queue'),
   );
 
