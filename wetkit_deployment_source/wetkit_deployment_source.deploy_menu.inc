@@ -136,7 +136,7 @@ function _wetkit_deployment_source_form_alter(array &$form, array $item = array(
     }
     elseif ($item['mlid']) {
       // If this is an existing link, use the raw default (usually empty).
-      $info['form']['#default_value'] = $info['default'];
+      $info['form']['#default_value'] = array($info['default']);
     }
     $form['options']['deploy_attributes'][$attribute] = $info['form'] + array(
       '#access' => $info['enabled'],
