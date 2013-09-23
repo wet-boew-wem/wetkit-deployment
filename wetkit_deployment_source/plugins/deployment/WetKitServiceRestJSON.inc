@@ -18,7 +18,7 @@ class WetKitServiceRestJSON extends DeployServiceRest {
         if ((substr($tmp_url['path'], 0, 3) == '/en') || (substr($tmp_url['path'], 0, 3) == '/fr')) {
           $tmp_url['path'] = substr($tmp_url['path'], 3);
         }
-        $tmp_url['path'] = '/' . $language->language . $tmp_url['path'];
+        $tmp_url['path'] = '/' . $language->prefix . $tmp_url['path'];
         $this->config['url'] = $this->unparse_url($tmp_url);
       }
 
