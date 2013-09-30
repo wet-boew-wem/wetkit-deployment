@@ -21,6 +21,16 @@ class WetKitServiceRestJSON extends DeployServiceRest {
         $tmp_url['path'] = '/' . $language->prefix . $tmp_url['path'];
         $this->config['url'] = $this->unparse_url($tmp_url);
       }
+      if ($entity->__metadata['type'] == 'menu_link') {
+        global $language;
+        $tmp_url = parse_url($this->config['url']);
+
+        if ((substr($tmp_url['path'], 0, 3) == '/en') || (substr($tmp_url['path'], 0, 3) == '/fr')) {
+          $tmp_url['path'] = substr($tmp_url['path'], 3);
+        }
+        $tmp_url['path'] = '/' . $language->prefix . $tmp_url['path'];
+        $this->config['url'] = $this->unparse_url($tmp_url);
+      }
 
       // TODO: Consider making the resource path configurable.
       $url = $this->config['url'] . '/' . $entity->__metadata['uri'] . '.json';
