@@ -1,5 +1,5 @@
 name = WetKit Deployment Environment
-description = Server Environment Deployment Configuration for Drupal WEM.
+description = Server Environment Deployment Configuration for Drupal WxT.
 core = 7.x
 package = WetKit
 dependencies[] = ctools
