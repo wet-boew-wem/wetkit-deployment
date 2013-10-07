@@ -15,8 +15,9 @@ class WetKitServiceRestJSON extends DeployServiceRest {
         global $language;
         $tmp_url = parse_url($this->config['url']);
 
-        if ((substr($tmp_url['path'], 0, 3) == '/en') || (substr($tmp_url['path'], 0, 3) == '/fr')) {
-          $tmp_url['path'] = substr($tmp_url['path'], 3);
+        $count = drupal_strlen('/' . $language->prefix);
+        if ((substr($tmp_url['path'], 0, $count) == '/' . $language->prefix)) {
+          $tmp_url['path'] = substr($tmp_url['path'], $count);
         }
         $tmp_url['path'] = '/' . $language->prefix . $tmp_url['path'];
         $this->config['url'] = $this->unparse_url($tmp_url);
@@ -25,8 +26,9 @@ class WetKitServiceRestJSON extends DeployServiceRest {
         global $language;
         $tmp_url = parse_url($this->config['url']);
 
-        if ((substr($tmp_url['path'], 0, 3) == '/en') || (substr($tmp_url['path'], 0, 3) == '/fr')) {
-          $tmp_url['path'] = substr($tmp_url['path'], 3);
+        $count = drupal_strlen('/' . $language->prefix);
+        if ((substr($tmp_url['path'], 0, $count) == '/' . $language->prefix)) {
+          $tmp_url['path'] = substr($tmp_url['path'], $count);
         }
         $tmp_url['path'] = '/' . $language->prefix . $tmp_url['path'];
         $this->config['url'] = $this->unparse_url($tmp_url);
