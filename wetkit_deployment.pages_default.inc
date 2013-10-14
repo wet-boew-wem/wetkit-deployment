@@ -19,7 +19,7 @@ function wetkit_deployment_default_page_manager_handlers() {
   $handler->handler = 'panel_context';
   $handler->weight = -30;
   $handler->conf = array(
-    'title' => 'WetKit Deploy Node add / edit form',
+    'title' => 'Deployment',
     'no_blocks' => 0,
     'pipeline' => 'standard',
     'css_id' => 'node-edit',
