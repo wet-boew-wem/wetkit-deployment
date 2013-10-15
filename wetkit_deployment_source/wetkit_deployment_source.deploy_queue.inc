@@ -93,12 +93,12 @@ function wetkit_deployment_source_add_remove_form_run_cron($form, &$form_state) 
   // Deploy.
   $queue = DrupalQueue::get('wetkit_deploy');
   $queue->createQueue();
-  $count = $queue->numberOfItems();
+  $count_deploy = $queue->numberOfItems();
   // Publish.
   $queue = DrupalQueue::get('wetkit_publish');
   $queue->createQueue();
-  $count = $queue->numberOfItems();
-  drupal_set_message(t('Ran the cron. There are now @count items in the queue', array('@count' => $count)));
+  $count_publish = $queue->numberOfItems();
+  drupal_set_message(t('Ran the cron. There are now @count items in the queue', array('@count' => $count_deploy)));
   $form_state['rebuild'] = TRUE;
 }
 
