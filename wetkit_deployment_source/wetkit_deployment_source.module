@@ -302,19 +302,26 @@ function wetkit_deployment_source_form_alter(&$form, &$form_state, $form_id) {
     unset($form['override_title_text']);
     unset($form['types']);
   }
+}
+
+/**
+ * Implements hook_views_bulk_operations_form_alter().
+ */
+function wetkit_deployment_source_views_bulk_operations_form_alter(&$form, &$form_state, $vbo) {
 
   // Perform logic on vbo submit.
   $vbo_types = array(
-    'views-exposed-form-deployment-administration-nodes-panel-pane-1',
-    'views-exposed-form-deployment-administration-beans-panel-pane-1',
-    'views-exposed-form-deployment-administration-files-panel-pane-1',
-    'views-exposed-form-deployment-administration-taxonomy-panel-pane-1',
-    'views-exposed-form-deployment-administration-users-panel-pane-1',
+    'views_form_deployment_administration_beans_panel_pane_1',
+    'views_form_deployment_administration_files_panel_pane_1',
+    'views_form_deployment_administration_nodes_panel_pane_1',
+    'views_form_deployment_administration_taxonomoy_panel_pane_1',
+    'views_form_deployment_administration_users_panel_pane_1',
   );
-  if (in_array($form['#id'], $vbo_types)) {
-    $form['#submit'][]='_wetkit_deployment_source_deploy_vbo';
+  if (in_array($form['#form_id'], $vbo_types)) {
+    $form['select']['submit']['#submit'][]='_wetkit_deployment_source_deploy_vbo';
   }
 }
+
 
 /**
  * Add all of the deployment items to the queue.
