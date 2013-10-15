@@ -104,15 +104,37 @@ function theme_wetkit_deployment_source_items($variables) {
   );
   $rows = array();
 
+  // Adjust entity display for table.
   foreach ($items as &$item) {
     $data = unserialize($item['data']);
+    $entity_title = '';
+    $entity_type = 'node';
+    if (isset($entity_type)) {
+      $entity_type = $data->__metadata['type'];
+    }
+    if ($entity_type == 'bean') {
+      $entity_title = $data->title;
+    }
+    if ($entity_type == 'file') {
+      $entity_title = $data->filename;
+    }
+    if ($entity_type == 'node') {
+      $entity_title = $data->title;
+    }
+    if ($entity_type == 'taxonomy_term') {
+      $entity_title = $data->name;
+    }
+    if ($entity_type == 'user') {
+      $entity_title = $data->name;
+    }
+    $ajax_string = 'wetkit_deployment_source_ajax/nojs/' . $entity_type . '/1';
     $rows[] = array(
       $item['item_id'],
-      isset($data->title) ? $data->title : '',
+      isset($entity_title) ? $entity_title : '',
       $data->__metadata['type'],
       date("Y-m-d H:i:s", $item['created']),
       $data->uuid,
-      ctools_modal_text_button(t('Show Content'), 'wetkit_deployment_source_ajax/nojs/1', t('Show Content'), 'ajax-processed'),
+      ctools_modal_text_button(t('Show Content'), $ajax_string, t('Show Content'), 'ajax-processed'),
     );
   }
   if (empty($rows)) {

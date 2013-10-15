@@ -33,10 +33,10 @@ function wetkit_deployment_source_menu() {
     'menu_name' => 'navigation',
     'expanded' => TRUE,
   );
-  $items['wetkit_deployment_source_ajax/%ctools_js/%'] = array(
+  $items['wetkit_deployment_source_ajax/%ctools_js/%/%'] = array(
     'type' => MENU_NORMAL_ITEM,
     'title' => 'Modal dialog for deployed content',
-    'page arguments' => array(1, 2),
+    'page arguments' => array(1, 2, 3),
     'page callback' => '_wetkit_deployment_source_modal',
     'access callback' => TRUE,
   );
@@ -108,10 +108,16 @@ function _wetkit_deployment_source_deploy($context = NULL) {
  * @return string
  *   The contents of the node, that will fill the modal window.
  */
-function _wetkit_deployment_source_modal($js = NULL, $entity_id = NULL) {
+function _wetkit_deployment_source_modal($js = NULL, $entity_type = NULL, $entity_id = NULL) {
   global $language;
   $title = '';
   $output = '';
+
+  if ($entity_type == NULL) {
+    // You can customize the string below, or use a drupal_goto() to
+    // send the user to a custom error page.
+    return t('No entity type was sent to be loaded.');
+  }
 
   if ($entity_id == NULL) {
     // You can customize the string below, or use a drupal_goto() to
@@ -128,14 +134,14 @@ function _wetkit_deployment_source_modal($js = NULL, $entity_id = NULL) {
   // Load the entity object.
   $query = new EntityFieldQuery();
 
-  $query->entityCondition('entity_type', 'node')
+  $query->entityCondition('entity_type', $entity_type)
     ->entityCondition('entity_id', $entity_id, '=');
 
   $result = $query->execute();
 
-  if (isset($result['node'])) {
-    $entity_nids = array_keys($result['node']);
-    $entities = entity_load('node', $entity_nids);
+  if (isset($result[$entity_type])) {
+    $entity_nids = array_keys($result[$entity_type]);
+    $entities = entity_load($entity_type, $entity_nids);
     foreach ($entities as $item) {
       $title = $item->title_field[$language->language][0]['value'];
       $output = $item->body[$language->language][0]['value'];
@@ -227,11 +233,11 @@ function wetkit_deployment_source_cron_queue_info() {
   if (variable_get('wetkit_deployment_source_enable_cron', TRUE)) {
     $queues['wetkit_deploy'] = array(
       'worker callback' => 'wetkit_deployment_source_worker_deploy',
-      'time' => 180,
+      'time' => 60,
     );
     $queues['wetkit_publish'] = array(
       'worker callback' => 'wetkit_deployment_source_worker_publish',
-      'time' => 180,
+      'time' => 60,
     );
     variable_set('wetkit_deployment_source_enable_cron', FALSE);
   }
@@ -296,6 +302,32 @@ function wetkit_deployment_source_form_alter(&$form, &$form_state, $form_id) {
     unset($form['override_title_text']);
     unset($form['types']);
   }
+
+  // Perform logic on vbo submit.
+  $vbo_types = array(
+    'views-exposed-form-deployment-administration-nodes-panel-pane-1',
+    'views-exposed-form-deployment-administration-beans-panel-pane-1',
+    'views-exposed-form-deployment-administration-files-panel-pane-1',
+    'views-exposed-form-deployment-administration-taxonomy-panel-pane-1',
+    'views-exposed-form-deployment-administration-users-panel-pane-1',
+  );
+  if (in_array($form['#id'], $vbo_types)) {
+    $form['#submit'][]='_wetkit_deployment_source_deploy_vbo';
+  }
+}
+
+/**
+ * Add all of the deployment items to the queue.
+ */
+function _wetkit_deployment_source_deploy_vbo($form,$form_state) {
+  global $base_url;
+  $url = $base_url . '/admin/dashboard/deployment/deploy';
+  $data = array(
+    'cancel_path' => 'admin/dashboard/deployment',
+  );
+  $full_url = url($url, array('query' => $data));
+  drupal_http_request($full_url);
+  //watchdog('action', 'Added entity !id to queue for plan: @plan.', array('!id' => $id, '@plan' => $plan), WATCHDOG_NOTICE);
 }
 
 /**
