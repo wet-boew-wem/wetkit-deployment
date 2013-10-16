@@ -14,7 +14,7 @@ function wetkit_deployment_environment_default_environment_indicator_environment
   $environment->disabled = FALSE; /* Edit this to true to make a default environment disabled initially */
   $environment->api_version = 1;
   $environment->machine = 'development_environment';
-  $environment->name = 'Dev Environment';
+  $environment->name = 'Stage Environment';
   $environment->regexurl = '';
   $environment->settings = array(
     'color' => '#2fa6e5',
