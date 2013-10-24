@@ -19,10 +19,9 @@ projects[deploy][patch][1948186] = http://drupal.org/files/deploy_allow_revision
 projects[deploy][patch][2052767] = http://drupal.org/files/deploy-undefined_variable_user-2052767-3.patch
 projects[deploy][patch][2092335] = http://drupal.org/files/deploy_new_alter_hook-2092335-4.patch
 
-projects[deploy_services_client][version] = 1.0-beta1
+projects[deploy_services_client][version] = 1.0-beta2
 projects[deploy_services_client][subdir] = contrib
 projects[deploy_services_client][type] = module
-projects[deploy_services_client][patch][2063517] = http://drupal.org/files/services_csrf_fix-2063517-01.patch
 
 projects[entity_dependency][version] = 1.x-dev
 projects[entity_dependency][subdir] = contrib
