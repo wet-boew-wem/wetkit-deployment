@@ -52,10 +52,8 @@ projects[environment_indicator][version] = 2.x-dev
 projects[environment_indicator][type] = module
 projects[environment_indicator][subdir] = contrib
 projects[environment_indicator][download][type] = git
-projects[environment_indicator][download][revision] = 1c38b79
+projects[environment_indicator][download][revision] = 7a5c5a
 projects[environment_indicator][download][branch] = 7.x-2.x
-projects[environment_indicator][patch][2001076] = http://drupal.org/files/syntax-error-during-installation-2001076-3.patch
-projects[environment_indicator][patch][2042011] = http://drupal.org/files/doesnt_update_properly_with_admin_menu_enabled-2042011-1.patch
 
 projects[quicktabs][version] = 3.x-dev
 projects[quicktabs][subdir] = contrib
