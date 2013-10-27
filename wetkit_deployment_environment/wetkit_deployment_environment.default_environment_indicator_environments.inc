@@ -18,6 +18,7 @@ function wetkit_deployment_environment_default_environment_indicator_environment
   $environment->regexurl = '';
   $environment->settings = array(
     'color' => '#2fa6e5',
+    'text_color' => '#FFFFFF',
     'weight' => '10',
     'position' => 'top',
     'fixed' => 0,
@@ -32,6 +33,7 @@ function wetkit_deployment_environment_default_environment_indicator_environment
   $environment->regexurl = 'prod';
   $environment->settings = array(
     'color' => '#A33',
+    'text_color' => '#FFFFFF',
     'weight' => '9',
     'position' => 'top',
     'fixed' => 0,
@@ -46,6 +48,7 @@ function wetkit_deployment_environment_default_environment_indicator_environment
   $environment->regexurl = 'qa';
   $environment->settings = array(
     'color' => '#F9AD81',
+    'text_color' => '#FFFFFF',
     'weight' => '9',
     'position' => 'top',
     'fixed' => 0,
