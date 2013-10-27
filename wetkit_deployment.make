@@ -52,7 +52,7 @@ projects[environment_indicator][version] = 2.x-dev
 projects[environment_indicator][type] = module
 projects[environment_indicator][subdir] = contrib
 projects[environment_indicator][download][type] = git
-projects[environment_indicator][download][revision] = 7a5c5a
+projects[environment_indicator][download][revision] = d7a5c5a
 projects[environment_indicator][download][branch] = 7.x-2.x
 
 projects[quicktabs][version] = 3.6
