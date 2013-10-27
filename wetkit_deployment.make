@@ -55,12 +55,8 @@ projects[environment_indicator][download][type] = git
 projects[environment_indicator][download][revision] = 7a5c5a
 projects[environment_indicator][download][branch] = 7.x-2.x
 
-projects[quicktabs][version] = 3.x-dev
+projects[quicktabs][version] = 3.6
 projects[quicktabs][subdir] = contrib
-projects[quicktabs][type] = module
-projects[quicktabs][download][type] = git
-projects[quicktabs][download][revision] = 89f7fd0
-projects[quicktabs][download][branch] = 7.x-3.x
 
 projects[services][version] = 3.x-dev
 projects[services][subdir] = contrib
