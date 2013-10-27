@@ -66,9 +66,8 @@ projects[services][version] = 3.x-dev
 projects[services][subdir] = contrib
 projects[services][type] = module
 projects[services][download][type] = git
-projects[services][download][revision] = 492920e
+projects[services][download][revision] = 83db734
 projects[services][download][branch] = 7.x-3.x
-projects[services][patch][2048529] = http://drupal.org/files/services-php-notice-2048529-1.patch
 
 projects[shared_content][version] = 1.x-dev
 projects[shared_content][subdir] = contrib
