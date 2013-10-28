@@ -18,8 +18,8 @@ function wetkit_deployment_form_taxonomy_overview_terms_alter(&$form, &$form_sta
 function wetkit_deployment_taxonomy_overview_terms_submit($form, &$form_state) {
   // The first section just deals with annoying issues specific to the taxonomy
   // overview form. It's necessary for the code to work, but not very
-  // illustrative.
-
+  // illustrative
+  //
   // When the "Reset to alphabetical" button is clicked, we might be displaying
   // a confirmation form rather than actually doing the reordering. Catch that
   // case and bail out when it happens.

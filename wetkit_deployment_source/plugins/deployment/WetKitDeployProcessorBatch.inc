@@ -28,7 +28,8 @@ class WetKitDeployProcessorBatch extends DeployProcessorMemory {
             array(
               $this->aggregator->plan->name,
               $entity,
-          ));
+            ),
+          );
         }
       }
     }

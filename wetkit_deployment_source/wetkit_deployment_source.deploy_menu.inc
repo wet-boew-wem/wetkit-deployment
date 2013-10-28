@@ -104,9 +104,9 @@ function wetkit_deployment_source_form_node_form_alter(&$form, $form_state) {
 /**
  * Add the deploy attributes to a menu item edit form.
  *
- * @param $form
+ * @param array $form
  *   The menu item edit form passed by reference.
- * @param $item
+ * @param array $item
  *   The optional existing menu item for context.
  */
 function _wetkit_deployment_source_form_alter(array &$form, array $item = array(), array &$complete_form) {

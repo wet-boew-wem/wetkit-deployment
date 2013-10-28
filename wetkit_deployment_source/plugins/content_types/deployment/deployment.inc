@@ -49,46 +49,46 @@ function wetkit_deployment_source_deployment_content_type_render($subtype, $conf
 
   // Iterate over all plans.
   foreach ($plans as $plan) {
-      $info = array();
+    $info = array();
 
-      // Get the entity keys from the aggregator.
-      $entity_keys = $plan->getEntities();
-      foreach ($entity_keys as $entity_key) {
-        // Get the entity info and all entities of this type.
-        $entity_info = entity_get_info($entity_key['type']);
-        $entities = entity_load($entity_key['type'], array($entity_key['id']));
-
-        // Construct a usable array for the theme function.
-        foreach ($entities as $entity) {
-          $title = '';
-          if (isset($entity_info['entity keys']['label'])) {
-            $title = filter_xss($entity->{$entity_info['entity keys']['label']});
-          }
-          // Walk-around for the user entity that apparently doesn't leverage
-          // the entity key 'label'.
-          elseif (isset($entity->uid) && isset($entity->name)) {
-            $title = filter_xss($entity->name);
-          }
-          if (isset($entity_info['uri callback'])) {
-            $uri = $entity_info['uri callback']($entity);
-            $title = l($title, $uri['path'], array('html' => TRUE));
-          }
-          $info[] = array(
-            'title' => $title,
-            'type' => $entity_info['label'],
-          );
-        }
-      }
+    // Get the entity keys from the aggregator.
+    $entity_keys = $plan->getEntities();
+    foreach ($entity_keys as $entity_key) {
+      // Get the entity info and all entities of this type.
+      $entity_info = entity_get_info($entity_key['type']);
+      $entities = entity_load($entity_key['type'], array($entity_key['id']));
 
       // Construct a usable array for the theme function.
-      $blocks[] = array(
-        'plan_name' => check_plain($plan->name),
-        'plan_title' => check_plain($plan->title),
-        'plan_description' => check_plain($plan->description),
-        'content' => theme('wetkit_deploy_ui_overview_plan_content', array('info' => $info)),
-        'fetch_only' => $plan->fetch_only,
-        'status' => deploy_plan_get_status($plan->name),
-      );
+      foreach ($entities as $entity) {
+        $title = '';
+        if (isset($entity_info['entity keys']['label'])) {
+          $title = filter_xss($entity->{$entity_info['entity keys']['label']});
+        }
+        // Walk-around for the user entity that apparently doesn't leverage
+        // the entity key 'label'.
+        elseif (isset($entity->uid) && isset($entity->name)) {
+          $title = filter_xss($entity->name);
+        }
+        if (isset($entity_info['uri callback'])) {
+          $uri = $entity_info['uri callback']($entity);
+          $title = l($title, $uri['path'], array('html' => TRUE));
+        }
+        $info[] = array(
+          'title' => $title,
+          'type' => $entity_info['label'],
+        );
+      }
+    }
+
+    // Construct a usable array for the theme function.
+    $blocks[] = array(
+      'plan_name' => check_plain($plan->name),
+      'plan_title' => check_plain($plan->title),
+      'plan_description' => check_plain($plan->description),
+      'content' => theme('wetkit_deploy_ui_overview_plan_content', array('info' => $info)),
+      'fetch_only' => $plan->fetch_only,
+      'status' => deploy_plan_get_status($plan->name),
+    );
   }
 
   $block = new stdClass();
