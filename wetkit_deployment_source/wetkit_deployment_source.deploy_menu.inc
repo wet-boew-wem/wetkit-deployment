@@ -94,7 +94,7 @@ function wetkit_deployment_source_form_menu_edit_item_alter(&$form, $form_state)
  * @see _wetkit_deployment_source_form_alter()
  */
 function wetkit_deployment_source_form_node_form_alter(&$form, $form_state) {
-  if (isset($form['menu']['link'])) {
+  if (isset($form['menu']['link']) && isset($form['#node']->menu)) {
     $item = $form['#node']->menu;
     _wetkit_deployment_source_form_alter($form['menu']['link'], $item, $form);
     $form['menu']['link']['options']['deploy_attributes']['#type'] = 'container';
@@ -110,9 +110,6 @@ function wetkit_deployment_source_form_node_form_alter(&$form, $form_state) {
  *   The optional existing menu item for context.
  */
 function _wetkit_deployment_source_form_alter(array &$form, array $item = array(), array &$complete_form) {
-  // Restrict access to the new form elements.
-  $form['options']['deploy_attributes']['#access'] = user_access('administer deploy menu');
-
   $form['options']['#tree'] = TRUE;
   $form['options']['#weight'] = 50;
 
@@ -165,7 +162,10 @@ function _wetkit_deployment_source_form_alter(array &$form, array $item = array(
     }
   }
 
-  $form['options']['deploy_attributes']['#access'] = (bool) element_get_visible_children($form['options']['deploy_attributes']);
+  // Restrict access to the new form elements.
+  $has_visible_children = (bool) element_get_visible_children($form['options']['deploy_attributes']);
+  $user_has_access = user_access('administer deploy menu');
+  $form['options']['deploy_attributes']['#access'] = ($has_visible_children && $user_has_access);
 }
 
 /**
