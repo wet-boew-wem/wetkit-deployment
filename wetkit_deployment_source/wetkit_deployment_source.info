@@ -40,6 +40,7 @@ features[field_instance][] = bean-wetkit_highlight-field_shared_content
 features[field_instance][] = bean-wetkit_rate-field_shared_content
 features[field_instance][] = bean-wetkit_search-field_shared_content
 features[field_instance][] = bean-wetkit_share-field_shared_content
+features[field_instance][] = bean-wetkit_slide-field_shared_content
 features[field_instance][] = bean-wetkit_twitter-field_shared_content
 features[field_instance][] = file-audio-field_shared_content
 features[field_instance][] = file-document-field_shared_content
