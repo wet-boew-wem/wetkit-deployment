@@ -120,7 +120,7 @@ function _wetkit_deployment_source_form_alter(array &$form, array $item = array(
     '#type' => 'fieldset',
     '#title' => t('Deploy'),
     '#collapsible' => TRUE,
-    '#collapsed' => TRUE,
+    '#collapsed' => FALSE,
     '#tree' => TRUE,
   );
 
