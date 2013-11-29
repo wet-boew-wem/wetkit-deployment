@@ -84,6 +84,21 @@ function _wetkit_deployment_source_entity_insert_or_update($entity, $type) {
 }
 
 /**
+ * Implements hook_deploy_entity_alter().
+ */
+function wetkit_deployment_source_deploy_entity_alter(&$entity, $entity_type) {
+  // Ensure the hidden attribute for menu links is always
+  // set to false before deployment occurs.
+  if ($entity_type == 'menu_link') {
+    $entity = (array) $entity;
+    if (isset($entity['hidden']) && $entity['hidden'] == TRUE) {
+      $entity['hidden'] = FALSE;
+    }
+    $entity = (object) $entity;
+  }
+}
+
+/**
  * Page callback for the simplest introduction menu entry.
  *
  * @param object $context
