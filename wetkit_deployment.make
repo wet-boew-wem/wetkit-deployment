@@ -52,19 +52,11 @@ projects[environment_indicator][download][branch] = 7.x-2.x
 projects[quicktabs][version] = 3.6
 projects[quicktabs][subdir] = contrib
 
-projects[services][version] = 3.x-dev
+projects[services][version] = 3.7
 projects[services][subdir] = contrib
-projects[services][type] = module
-projects[services][download][type] = git
-projects[services][download][revision] = 83db734
-projects[services][download][branch] = 7.x-3.x
 
-projects[shared_content][version] = 1.x-dev
+projects[shared_content][version] = 1.0-beta2
 projects[shared_content][subdir] = contrib
-projects[shared_content][type] = module
-projects[shared_content][download][type] = git
-projects[shared_content][download][revision] = b2c81aa
-projects[shared_content][download][branch] = 7.x-1.x
 
 projects[uuid_redirect][version] = 1.x-dev
 projects[uuid_redirect][subdir] = contrib
