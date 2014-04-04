@@ -42,12 +42,8 @@ projects[entity_menu_links][download][revision] = 5fed421
 projects[entity_menu_links][download][branch] = 7.x-1.x
 projects[entity_menu_links][patch][2090403] = http://drupal.org/files/entity_menu_links_system_path-2090403-1.patch
 
-projects[environment_indicator][version] = 2.x-dev
-projects[environment_indicator][type] = module
+projects[environment_indicator][version] = 2.2
 projects[environment_indicator][subdir] = contrib
-projects[environment_indicator][download][type] = git
-projects[environment_indicator][download][revision] = d7a5c5a
-projects[environment_indicator][download][branch] = 7.x-2.x
 
 projects[quicktabs][version] = 3.6
 projects[quicktabs][subdir] = contrib
