@@ -19,6 +19,7 @@ dependencies[] = strongarm
 dependencies[] = uuid
 dependencies[] = uuid_path
 dependencies[] = uuid_redirect
+dependencies[] = views
 dependencies[] = views_content
 dependencies[] = wetkit_deployment
 dependencies[] = wetkit_deployment_environment

@@ -29,7 +29,7 @@ function wetkit_deployment_source_menu() {
     'description' => 'Simplest possible menu type, and the parent menu entry for others',
     'page callback' => '_wetkit_deployment_source_deploy',
     'page arguments' => array('context' => 'wetkit_deployment'),
-    'access callback' => TRUE,
+    'access arguments' => array('administer deployments'),
     'menu_name' => 'navigation',
     'expanded' => TRUE,
   );
@@ -38,7 +38,7 @@ function wetkit_deployment_source_menu() {
     'title' => 'Modal dialog for deployed content',
     'page arguments' => array(1, 2, 3),
     'page callback' => '_wetkit_deployment_source_modal',
-    'access callback' => TRUE,
+    'access arguments' => array('administer deployments'),
   );
   return $items;
 }
