@@ -84,6 +84,22 @@ function _wetkit_deployment_source_entity_insert_or_update($entity, $type) {
 }
 
 /**
+ * Implements hook_entity_delete().
+ */
+function wetkit_deployment_source_entity_delete($entity, $type) {
+  if (module_exists('shared_content_source') && $type == 'menu_link') {
+    if (isset($entity->options)) {
+      $options = unserialize($entity->options);
+    }
+    if (isset($options['deploy_attributes']['deploy_menu_item']['yes'])) {
+      $entity_wrapper = entity_metadata_wrapper($type, $entity);
+      $plan = deploy_manager_plan_load('destination_site_plan');
+      deploy_services_client_delete_entity_from_plan_endpoints($entity_wrapper, $plan);
+    }
+  }
+}
+
+/**
  * Implements hook_deploy_entity_alter().
  */
 function wetkit_deployment_source_deploy_entity_alter(&$entity, $entity_type) {
