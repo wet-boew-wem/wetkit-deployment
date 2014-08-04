@@ -62,5 +62,5 @@ projects[uuid_redirect][download][type] = git
 projects[uuid_redirect][download][revision] = ce1ab849
 projects[uuid_redirect][download][branch] = 7.x-1.x
 
-projects[xautoload][version] = 3.2
+projects[xautoload][version] = 3.6
 projects[xautoload][subdir] = contrib
