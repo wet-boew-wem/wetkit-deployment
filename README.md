@@ -1,6 +1,6 @@
 WxT Deployment
 ==============
-Functionality to facilitate a content staging workflow for [Drupal WxT][drupalwxt].
+Functionality to facilitate a content staging workflow for [Drupal WxT][drupalwxt] powered by REST and UUID.
 
 Key features
 ------------
