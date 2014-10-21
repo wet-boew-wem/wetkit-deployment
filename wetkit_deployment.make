@@ -50,6 +50,7 @@ projects[quicktabs][subdir] = contrib
 
 projects[services][version] = 3.10
 projects[services][subdir] = contrib
+projects[services][patch][2200269] = http://drupal.org/files/issues/services-2200269.patch
 
 projects[shared_content][version] = 1.0-beta2
 projects[shared_content][subdir] = contrib
