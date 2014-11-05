@@ -48,7 +48,7 @@ projects[environment_indicator][subdir] = contrib
 projects[quicktabs][version] = 3.6
 projects[quicktabs][subdir] = contrib
 
-projects[services][version] = 3.7
+projects[services][version] = 3.10
 projects[services][subdir] = contrib
 projects[services][patch][2200269] = http://drupal.org/files/issues/services-2200269.patch
 
