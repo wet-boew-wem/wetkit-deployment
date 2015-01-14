@@ -20,7 +20,7 @@ function wetkit_deployment_source_add_remove_form($form, &$form_state) {
   $form['#attached']['css'] = array(drupal_get_path('module', 'wetkit_deployment_source') . '/css/wetkit_deployment_source.css');
 
   $form['queue_title'] = array(
-    '#markup' => '<h3>Deployment (Batch)</h3>',
+    '#markup' => '<h3>' . t('Deployment (Batch)') . '</h3>',
   );
   $form['queue_name'] = array(
     '#type' => 'select',
