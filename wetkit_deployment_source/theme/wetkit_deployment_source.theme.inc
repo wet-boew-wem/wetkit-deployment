@@ -29,12 +29,12 @@ function theme_wetkit_deploy_ui_overview($variables) {
       $output .= '<h3>' . $block['plan_title'] . '</h3>';
       if (!$block['fetch_only'] && $status_info) {
         $output .= '<div class="messages ' . $status_info['class'] . '">';
-        $output .= '<h4 class="element-invisible">Status message</h4>';
+        $output .= '<h4 class="element-invisible">' . t('Status message') . '</h4>';
         $output .= $status_info['title'];
         $output .= '</div>';
       }
       $output .= '<div class="description">';
-      $output .= '<h4 class="element-invisible">Plan description</h4>';
+      $output .= '<h4 class="element-invisible">' . t('Plan description') . '</h4>';
       $output .= $block['plan_description'];
       $output .= '</div>';
       if (!$block['fetch_only']) {
