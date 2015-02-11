@@ -5,6 +5,7 @@ package = WetKit
 dependencies[] = bean_uuid
 dependencies[] = ctools
 dependencies[] = deploy
+dependencies[] = deploy_services
 dependencies[] = deploy_services_client
 dependencies[] = deploy_ui
 dependencies[] = entity
