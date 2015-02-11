@@ -24,7 +24,6 @@ projects[deploy_services_client][type] = module
 
 projects[entity_dependency][version] = 1.0-alpha2
 projects[entity_dependency][subdir] = contrib
-projects[entity_dependency][patch][1538848] = http://drupal.org/files/1538848-missing-bundle-property-5.patch
 projects[entity_dependency][patch][1589794] = http://drupal.org/files/entity_dependency_iterator_documentation-1589794-1.patch
 projects[entity_dependency][patch][1590280] = http://drupal.org/files/entity_dependency_comment_typos-1590280-1.patch
 projects[entity_dependency][patch][1772372] = http://drupal.org/files/documentation-1772372.patch
