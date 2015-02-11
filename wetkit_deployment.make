@@ -8,12 +8,8 @@ core = 7.x
 projects[configuration][version] = 2.0-alpha3
 projects[configuration][subdir] = contrib
 
-projects[deploy][version] = 2.x-dev
+projects[deploy][version] = 2.0-alpha3
 projects[deploy][subdir] = contrib
-projects[deploy][type] = module
-projects[deploy][download][type] = git
-projects[deploy][download][revision] = 3566fb6
-projects[deploy][download][branch] = 7.x-2.x
 projects[deploy][patch][1604938] = http://drupal.org/files/deploy-1604938_1.patch
 projects[deploy][patch][2052767] = http://drupal.org/files/deploy-undefined_variable_user-2052767-3.patch
 projects[deploy][patch][2092335] = http://drupal.org/files/deploy_new_alter_hook-2092335-4.patch
