@@ -27,3 +27,12 @@ function wetkit_deployment_source_uninstall() {
     }
   }
 }
+
+/**
+ * Install the wetkit update module.
+ */
+function wetkit_deployment_update_7101() {
+  if (!module_exists('deploy_services')) {
+    module_enable(array('deploy_services'));
+  }
+}
