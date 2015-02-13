@@ -28,6 +28,7 @@ function wetkit_deployment_source_deploy_plans_default() {
     'destination_site_endpoint' => 'destination_site_endpoint',
     'destination_site_batch_endpoint' => 0,
   );
+  $plan->dependency_plugin = '';
   $export['destination_site_plan'] = $plan;
 
   $plan = new DeployPlan();
@@ -48,6 +49,7 @@ function wetkit_deployment_source_deploy_plans_default() {
     'destination_site_endpoint' => 0,
     'destination_site_batch_endpoint' => 'destination_site_batch_endpoint',
   );
+  $plan->dependency_plugin = '';
   $export['wetkit_deployment'] = $plan;
 
   return $export;

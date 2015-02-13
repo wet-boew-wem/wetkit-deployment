@@ -17,7 +17,7 @@ function wetkit_deployment_environment_default_environment_indicator_environment
   $environment->name = 'Stage Environment';
   $environment->regexurl = '';
   $environment->settings = array(
-    'color' => '#2fa6e5',
+    'color' => '#176ca7',
     'text_color' => '#FFFFFF',
     'weight' => '10',
     'position' => 'top',
