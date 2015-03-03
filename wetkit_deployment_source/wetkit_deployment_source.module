@@ -110,7 +110,7 @@ function wetkit_deployment_source_deploy_entity_alter(&$entity, $entity_type) {
   if ($entity_type == 'menu_link') {
     $entity = (array) $entity;
     if (isset($entity['hidden']) && $entity['hidden'] == TRUE) {
-      $entity['hidden'] = FALSE;
+      $entity['hidden'] = 0;
     }
     $entity = (object) $entity;
   }
