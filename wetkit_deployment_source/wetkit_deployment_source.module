@@ -23,6 +23,11 @@ function wetkit_deployment_source_ctools_plugin_directory($module, $plugin) {
  */
 function wetkit_deployment_source_menu() {
   // Deployment menu link.
+  $items['admin/dashboard/deployment'] = array(
+    'title' => 'Tab 1',
+    'type' => MENU_DEFAULT_LOCAL_TASK,
+    'weight' => -10
+  );
   $items['admin/dashboard/deployment/deploy'] = array(
     'type' => MENU_LOCAL_TASK,
     'title' => 'Deploy for WetKit',
@@ -425,4 +430,21 @@ function wetkit_deployment_source_deploy_manager_plan_get_options($args = array(
     $options[$plan_name] = $info->title;
   }
   return $options;
+}
+
+/**
+ * Implements hook_form_alter()
+ */
+function wetkit_deployment_form_alter(&$form, &$form_state, $form_id) {
+  /**
+   * Globally make sure that all options are inside a fieldset. Currently just supporting a known list
+   * of forms, but persumably this can be applied to all items eventually.
+   */
+  $forms_to_improve = array(
+    'wetkit_deployment_source_queue_edit_form'
+  );
+
+  if (in_array($form_id, $forms_to_improve)) {
+    unset($form['override_title_heading']);
+  }
 }
