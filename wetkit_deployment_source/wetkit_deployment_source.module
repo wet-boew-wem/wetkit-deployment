@@ -23,29 +23,21 @@ function wetkit_deployment_source_ctools_plugin_directory($module, $plugin) {
  */
 function wetkit_deployment_source_menu() {
   // Deployment menu link.
-  $items['admin/dashboard/deployment'] = array(
-    'title' => 'Tab 1',
-    'type' => MENU_DEFAULT_LOCAL_TASK,
-    'weight' => -10
-  );
   $items['admin/dashboard/deployment/deploy'] = array(
-    'type' => MENU_LOCAL_TASK,
     'title' => 'Deploy for WetKit',
-    'description' => 'Simplest possible menu type, and the parent menu entry for others',
     'page callback' => '_wetkit_deployment_source_deploy',
     'page arguments' => array('context' => 'wetkit_deployment'),
     'access callback' => 'user_access',
     'access arguments' => array('administer deployments'),
-    'menu_name' => 'navigation',
-    'expanded' => TRUE,
+    'type' => MENU_CALLBACK,
   );
   $items['wetkit_deployment_source_ajax/%ctools_js/%/%'] = array(
-    'type' => MENU_NORMAL_ITEM,
     'title' => 'Modal dialog for deployed content',
-    'page arguments' => array(1, 2, 3),
     'page callback' => '_wetkit_deployment_source_modal',
+    'page arguments' => array(1, 2, 3),
     'access callback' => 'user_access',
     'access arguments' => array('administer deployments'),
+    'type' => MENU_CALLBACK,
   );
   return $items;
 }
@@ -362,14 +354,10 @@ function wetkit_deployment_source_views_bulk_operations_form_alter(&$form, &$for
 /**
  * Add all of the deployment items to the queue.
  */
-function _wetkit_deployment_source_deploy_vbo($form, $form_state) {
-  global $base_url;
-  $url = $base_url . '/admin/dashboard/deployment/deploy';
-  $data = array(
-    'cancel_path' => 'admin/dashboard/deployment',
+function _wetkit_deployment_source_deploy_vbo($form, &$form_state) {
+  $form_state['redirect'] = array(
+    'admin/dashboard/deployment/deploy',
   );
-  $full_url = url($url, array('query' => $data));
-  drupal_http_request($full_url);
 }
 
 /**
