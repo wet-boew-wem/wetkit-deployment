@@ -17,7 +17,6 @@ function wetkit_deployment_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_deploy_to_destination_site',
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',
@@ -45,7 +44,6 @@ function wetkit_deployment_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_shared_content',
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',
