@@ -5,9 +5,6 @@ core = 7.x
 
 ; Modules for WetKit Deployment
 
-projects[configuration][version] = 2.0-alpha3
-projects[configuration][subdir] = contrib
-
 projects[deploy][version] = 2.0-alpha3
 projects[deploy][subdir] = contrib
 projects[deploy][patch][1604938] = http://drupal.org/files/deploy-1604938_1.patch
@@ -53,6 +50,3 @@ projects[uuid_redirect][type] = module
 projects[uuid_redirect][download][type] = git
 projects[uuid_redirect][download][revision] = ce1ab849
 projects[uuid_redirect][download][branch] = 7.x-1.x
-
-projects[xautoload][version] = 3.6
-projects[xautoload][subdir] = contrib
