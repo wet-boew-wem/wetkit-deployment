@@ -108,26 +108,32 @@ function theme_wetkit_deployment_source_items($variables) {
   foreach ($items as &$item) {
     $data = unserialize($item['data']);
     $entity_title = '';
+    $id = '';
     $entity_type = 'node';
     if (isset($entity_type)) {
       $entity_type = $data->__metadata['type'];
     }
     if ($entity_type == 'bean') {
       $entity_title = $data->title;
+      $id = $data->bid;
     }
     if ($entity_type == 'file') {
       $entity_title = $data->filename;
+      $id = $data->fid;
     }
     if ($entity_type == 'node') {
       $entity_title = $data->title;
+      $id = $data->nid;
     }
     if ($entity_type == 'taxonomy_term') {
       $entity_title = $data->name;
+      $id = $data->tid;
     }
     if ($entity_type == 'user') {
       $entity_title = $data->name;
+      $id = $data->uid;
     }
-    $ajax_string = 'wetkit_deployment_source_ajax/nojs/' . $entity_type . '/1';
+    $ajax_string = 'wetkit_deployment_source_ajax/nojs/' . $entity_type . '/' . $id;
     $rows[] = array(
       $item['item_id'],
       isset($entity_title) ? $entity_title : '',
