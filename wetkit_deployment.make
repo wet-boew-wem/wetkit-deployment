@@ -14,7 +14,6 @@ projects[deploy][patch][2136595] = http://drupal.org/files/issues/helpful_helper
 
 projects[deploy_services_client][version] = 1.0-beta2
 projects[deploy_services_client][subdir] = contrib
-projects[deploy_services_client][type] = module
 
 projects[entity_dependency][version] = 1.0-alpha2
 projects[entity_dependency][subdir] = contrib
@@ -32,9 +31,6 @@ projects[environment_indicator][subdir] = contrib
 
 projects[quicktabs][version] = 3.6
 projects[quicktabs][subdir] = contrib
-
-projects[services][version] = 3.11
-projects[services][subdir] = contrib
 
 projects[services][version] = 3.12
 projects[services][subdir] = contrib
