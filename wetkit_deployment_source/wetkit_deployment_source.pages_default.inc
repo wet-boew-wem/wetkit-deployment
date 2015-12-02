@@ -23,7 +23,7 @@ function wetkit_deployment_source_default_page_manager_pages() {
       0 => array(
         'name' => 'perm',
         'settings' => array(
-          'perm' => 'administer deployments',
+          'perm' => 'administer deploy dashboard',
         ),
         'context' => 'logged-in-user',
         'not' => FALSE,

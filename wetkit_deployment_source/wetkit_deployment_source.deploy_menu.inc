@@ -14,6 +14,10 @@ function wetkit_deployment_source_permission() {
       'title' => t('administer deploy menu'),
       'description' => t('administer deploy menu.'),
     ),
+    'administer deploy dashboard' => array(
+      'title' => t('administer deploy dashboard'),
+      'description' => t('administer deploy dashboard.'),
+    ),
   );
 }
 
