@@ -26,7 +26,7 @@ projects[entity_menu_links][version] = 1.0-alpha3
 projects[entity_menu_links][subdir] = contrib
 projects[entity_menu_links][patch][2622230] = http://drupal.org/files/issues/entity_menu_links-sqlsrv_PDOException_keyword-2622230-2.patch
 
-projects[environment_indicator][version] = 2.5
+projects[environment_indicator][version] = 2.8
 projects[environment_indicator][subdir] = contrib
 
 projects[quicktabs][version] = 3.6
