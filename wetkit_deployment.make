@@ -22,9 +22,8 @@ projects[entity_dependency][patch][1590280] = http://drupal.org/files/entity_dep
 projects[entity_dependency][patch][1772372] = http://drupal.org/files/documentation-1772372.patch
 projects[entity_dependency][patch][2051797] = http://drupal.org/files/2051797-file-bug-1.patch
 
-projects[entity_menu_links][version] = 1.0-alpha2
+projects[entity_menu_links][version] = 1.0-alpha3
 projects[entity_menu_links][subdir] = contrib
-projects[entity_menu_links][patch][2089133] = http://drupal.org/files/issues/wetkit_deployment_entity_menu_links_create_new_menu-2089133-12.patch
 projects[entity_menu_links][patch][2622230] = http://drupal.org/files/issues/entity_menu_links-sqlsrv_PDOException_keyword-2622230-2.patch
 
 projects[environment_indicator][version] = 2.5
