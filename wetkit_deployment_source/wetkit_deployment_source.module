@@ -260,7 +260,7 @@ function wetkit_deployment_deploy_services() {
  */
 function wetkit_deployment_source_cron_queue_info() {
   $queues = array();
-  if (variable_get('wetkit_deployment_source_enable_cron', TRUE)) {
+  if ((variable_get('wetkit_deployment_source_enable_cron', TRUE)) || (drupal_is_cli() && function_exists('drush_main'))) {
     $queues['wetkit_deploy'] = array(
       'worker callback' => 'wetkit_deployment_source_worker_deploy',
       'time' => 60,
