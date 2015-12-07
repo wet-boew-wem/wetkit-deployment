@@ -16,6 +16,7 @@ projects[deploy][patch][2604658] = http://drupal.org/files/issues/delete_by_revi
 
 projects[deploy_services_client][version] = 1.0-beta2
 projects[deploy_services_client][subdir] = contrib
+projects[deploy_services_client][patch][2630504] = http://drupal.org/files/issues/support_for-2630504-2.patch
 
 projects[entity_dependency][version] = 1.0-alpha2
 projects[entity_dependency][subdir] = contrib

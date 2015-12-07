@@ -102,14 +102,15 @@ function wetkit_deployment_source_entity_delete($entity, $type) {
  * Implements hook_deploy_entity_alter().
  */
 function wetkit_deployment_source_deploy_entity_alter(&$entity, $entity_type) {
-  // Ensure the hidden attribute for menu links is always
-  // set to false before deployment occurs.
+  // Ensure the hidden attribute isn't overridden by
+  // i18n_menu_translated_menu_link_alter.
   if ($entity_type == 'menu_link') {
-    $entity = (array) $entity;
-    if (isset($entity['hidden']) && $entity['hidden'] == TRUE) {
-      $entity['hidden'] = 0;
+    $query = db_select('menu_links')
+      ->fields('menu_links', array('mlid', 'hidden'))
+      ->condition('mlid', $entity->mlid);
+    if ($item = $query->execute()->fetchAssoc()) {
+      $entity->hidden  = $item['hidden'];
     }
-    $entity = (object) $entity;
   }
 }
 
