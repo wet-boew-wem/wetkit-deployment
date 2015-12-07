@@ -11,6 +11,7 @@ projects[deploy][patch][1604938] = http://drupal.org/files/deploy-1604938_1.patc
 projects[deploy][patch][2052767] = http://drupal.org/files/deploy-undefined_variable_user-2052767-3.patch
 projects[deploy][patch][2092335] = http://drupal.org/files/deploy_new_alter_hook-2092335-4.patch
 projects[deploy][patch][2136595] = http://drupal.org/files/issues/helpful_helper_text-2136595-1.patch
+projects[deploy][patch][2136595] = http://drupal.org/files/issues/catch_exceptions-2604656-3.patch
 
 projects[deploy_services_client][version] = 1.0-beta2
 projects[deploy_services_client][subdir] = contrib
