@@ -42,8 +42,9 @@ function wetkit_deployment_source_views_default_views() {
     'delta' => 'delta',
     'title' => 'title',
     'url' => 'url',
+    'changed' => 'changed',
   );
-  $handler->display->display_options['style_options']['default'] = 'delta';
+  $handler->display->display_options['style_options']['default'] = 'changed';
   $handler->display->display_options['style_options']['info'] = array(
     'views_bulk_operations' => array(
       'align' => '',
@@ -65,6 +66,13 @@ function wetkit_deployment_source_views_default_views() {
       'empty_column' => 0,
     ),
     'url' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'changed' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'desc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
@@ -115,6 +123,12 @@ function wetkit_deployment_source_views_default_views() {
   $handler->display->display_options['fields']['url']['table'] = 'views_entity_bean';
   $handler->display->display_options['fields']['url']['field'] = 'url';
   $handler->display->display_options['fields']['url']['link_to_entity'] = 0;
+  /* Field: Block: Changed */
+  $handler->display->display_options['fields']['changed']['id'] = 'changed';
+  $handler->display->display_options['fields']['changed']['table'] = 'bean';
+  $handler->display->display_options['fields']['changed']['field'] = 'changed';
+  $handler->display->display_options['fields']['changed']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['changed']['separator'] = '';
   /* Filter criterion: Block: Title */
   $handler->display->display_options['filters']['title']['id'] = 'title';
   $handler->display->display_options['filters']['title']['table'] = 'bean';
@@ -178,6 +192,8 @@ function wetkit_deployment_source_views_default_views() {
     t('Block Delta'),
     t('Title'),
     t('URL'),
+    t('Changed'),
+    t('.'),
     t('Type'),
     t('Content pane'),
     t('View panes'),
