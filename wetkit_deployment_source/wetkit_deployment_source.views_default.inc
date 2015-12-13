@@ -128,7 +128,6 @@ function wetkit_deployment_source_views_default_views() {
   $handler->display->display_options['fields']['changed']['table'] = 'bean';
   $handler->display->display_options['fields']['changed']['field'] = 'changed';
   $handler->display->display_options['fields']['changed']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['changed']['separator'] = '';
   /* Filter criterion: Block: Title */
   $handler->display->display_options['filters']['title']['id'] = 'title';
   $handler->display->display_options['filters']['title']['table'] = 'bean';
@@ -193,7 +192,6 @@ function wetkit_deployment_source_views_default_views() {
     t('Title'),
     t('URL'),
     t('Changed'),
-    t('.'),
     t('Type'),
     t('Content pane'),
     t('View panes'),

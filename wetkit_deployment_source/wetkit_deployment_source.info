@@ -62,6 +62,7 @@ features[field_instance][] = file-audio-field_shared_content
 features[field_instance][] = file-document-field_shared_content
 features[field_instance][] = file-image-field_shared_content
 features[field_instance][] = file-video-field_shared_content
+features[field_instance][] = file-wetkit_video-field_shared_content
 features[field_instance][] = node-deploy_content_moderated-field_deploy_to_destination_site
 features[field_instance][] = node-deploy_content_moderated-field_shared_content
 features[field_instance][] = node-deploy_content_simple-field_deploy_to_destination_site
