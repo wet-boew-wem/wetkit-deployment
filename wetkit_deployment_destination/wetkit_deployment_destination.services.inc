@@ -51,6 +51,19 @@ function wetkit_deployment_destination_default_services_endpoint() {
         ),
       ),
     ),
+    'field_collection_item' => array(
+      'operations' => array(
+        'retrieve' => array(
+          'enabled' => '1',
+        ),
+        'update' => array(
+          'enabled' => '1',
+        ),
+        'delete' => array(
+          'enabled' => '1',
+        ),
+      ),
+    ),
     'file' => array(
       'operations' => array(
         'retrieve' => array(
@@ -60,6 +73,19 @@ function wetkit_deployment_destination_default_services_endpoint() {
           'enabled' => '1',
         ),
         'update' => array(
+          'enabled' => '1',
+        ),
+      ),
+    ),
+    'menu_link' => array(
+      'operations' => array(
+        'retrieve' => array(
+          'enabled' => '1',
+        ),
+        'update' => array(
+          'enabled' => '1',
+        ),
+        'delete' => array(
           'enabled' => '1',
         ),
       ),
@@ -123,32 +149,6 @@ function wetkit_deployment_destination_default_services_endpoint() {
               'resource_api_version' => '1.0',
             ),
           ),
-        ),
-      ),
-    ),
-    'field_collection_item' => array(
-      'operations' => array(
-        'retrieve' => array(
-          'enabled' => '1',
-        ),
-        'update' => array(
-          'enabled' => '1',
-        ),
-        'delete' => array(
-          'enabled' => '1',
-        ),
-      ),
-    ),
-    'menu_link' => array(
-      'operations' => array(
-        'retrieve' => array(
-          'enabled' => '1',
-        ),
-        'update' => array(
-          'enabled' => '1',
-        ),
-        'delete' => array(
-          'enabled' => '1',
         ),
       ),
     ),
