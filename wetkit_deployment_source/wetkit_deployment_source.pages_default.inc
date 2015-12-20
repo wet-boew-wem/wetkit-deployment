@@ -28,8 +28,16 @@ function wetkit_deployment_source_default_page_manager_pages() {
         'context' => 'logged-in-user',
         'not' => FALSE,
       ),
+      1 => array(
+        'name' => 'perm',
+        'settings' => array(
+          'perm' => 'administer deployments',
+        ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
+      ),
     ),
-    'logic' => 'and',
+    'logic' => 'or',
   );
   $page->menu = array(
     'type' => 'tab',
