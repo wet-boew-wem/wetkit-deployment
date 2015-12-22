@@ -333,6 +333,29 @@ function wetkit_deployment_source_form_alter(&$form, &$form_state, $form_id) {
     unset($form['override_title_text']);
     unset($form['types']);
   }
+
+  // Overrride Deploy Managed UI since we have our own interface.
+  if (!empty($form['#node_edit_form']) && isset($form['deploy_managed_ui'])) {
+    unset($form['deploy_managed_ui']);
+    foreach ($form['#submit'] as $key => $handler) {
+      if ($handler == 'deploy_managed_ui_node_form_submit') {
+        unset($form['#submit'][$key]);
+      }
+    }
+  }
+
+  // For the rest we only support edit forms following the Entity API convention.
+  if (!empty($form['#entity_type'])) {
+    $entity_type = $form['#entity_type'];
+    if (isset($form[$entity_type]) && is_object($form[$entity_type]['#value'])) {
+      unset($form['deploy_managed_ui']);
+      foreach ($form['#submit'] as $key => $handler) {
+        if ($handler == 'deploy_managed_ui_entity_form_submit') {
+          unset($form['#submit'][$key]);
+        }
+      }
+    }
+  }
 }
 
 /**

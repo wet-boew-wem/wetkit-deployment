@@ -14,8 +14,8 @@ function wetkit_deployment_source_deploy_plans_default() {
   $plan->disabled = FALSE; /* Edit this to true to make a default plan disabled initially */
   $plan->api_version = 1;
   $plan->name = 'destination_site_plan';
-  $plan->title = 'Destination Site';
-  $plan->description = 'Deploys content to a particular destination site.';
+  $plan->title = 'Push to Production (Memory)';
+  $plan->description = 'Deploy entities to the Production Environment using the in-memory method.';
   $plan->debug = 0;
   $plan->aggregator_plugin = 'DeployAggregatorManaged';
   $plan->aggregator_config = array(
@@ -35,8 +35,8 @@ function wetkit_deployment_source_deploy_plans_default() {
   $plan->disabled = FALSE; /* Edit this to true to make a default plan disabled initially */
   $plan->api_version = 1;
   $plan->name = 'wetkit_deployment';
-  $plan->title = 'Destination Site (Batch)';
-  $plan->description = 'Deploys content to a particular destination site.';
+  $plan->title = 'Push to Production (Batch)';
+  $plan->description = 'Deploy entities to the Production Environment using the Batch method.';
   $plan->debug = 0;
   $plan->aggregator_plugin = 'WetKitDeployAggregatorManaged';
   $plan->aggregator_config = array(

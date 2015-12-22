@@ -11,7 +11,12 @@ projects[deploy][patch][1604938] = http://drupal.org/files/deploy-1604938_1.patc
 projects[deploy][patch][2092335] = http://drupal.org/files/deploy_new_alter_hook-2092335-4.patch
 projects[deploy][patch][2136595] = http://drupal.org/files/issues/helpful_helper_text-2136595-1.patch
 projects[deploy][patch][2604656] = http://drupal.org/files/issues/catch_exceptions-2604656-3.patch
-projects[deploy][patch][2604658] = http://drupal.org/files/issues/delete_by_revision_id-2604658-3.patch
+projects[deploy][patch][2638954] = http://drupal.org/files/issues/deleted_node_revisions-2638954-2.patch
+
+projects[deploy_plus][version] = 7.x-1.0
+projects[deploy_plus][subdir] = contrib
+projects[deploy_plus][patch][2638866] = http://drupal.org/files/issues/ctools_content_type-2638866-3.patch
+projects[deploy_plus][patch][2638872] = http://drupal.org/files/issues/entity_handling_errors-2638872-2.patch
 
 projects[deploy_services_client][version] = 1.0-beta2
 projects[deploy_services_client][subdir] = contrib
@@ -33,6 +38,7 @@ projects[environment_indicator][subdir] = contrib
 
 projects[quicktabs][version] = 3.6
 projects[quicktabs][subdir] = contrib
+projects[quicktabs][patch][1454486] = http://drupal.org/files/issues/quicktabs-tab-history-1454486-35.patch
 
 projects[services][version] = 3.12
 projects[services][subdir] = contrib

@@ -20,11 +20,11 @@ function wetkit_deployment_source_deploy_endpoints_default() {
   $endpoint->authenticator_plugin = 'DeployAuthenticatorSession';
   $endpoint->authenticator_config = array(
     'username' => 'admin',
-    'password' => 'WetKit2013',
+    'password' => 'WetKit2015',
   );
   $endpoint->service_plugin = 'WetKitServiceRestJSON';
   $endpoint->service_config = array(
-    'url' => 'http://normandy.prod:8080/services/rest',
+    'url' => 'http://wxt.prod:8000/services/rest',
   );
   $export['destination_site_batch_endpoint'] = $endpoint;
 
@@ -38,11 +38,11 @@ function wetkit_deployment_source_deploy_endpoints_default() {
   $endpoint->authenticator_plugin = 'DeployAuthenticatorSession';
   $endpoint->authenticator_config = array(
     'username' => 'admin',
-    'password' => 'WetKit2013',
+    'password' => 'WetKit2015',
   );
   $endpoint->service_plugin = 'WetKitServiceRestJSON';
   $endpoint->service_config = array(
-    'url' => 'http://normandy.prod:8080/services/rest',
+    'url' => 'http://wxt.prod:8000/services/rest',
   );
   $export['destination_site_endpoint'] = $endpoint;
 
