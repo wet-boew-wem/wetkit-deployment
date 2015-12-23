@@ -78,6 +78,7 @@ features[page_manager_existing_pages][] = deploy
 features[page_manager_handlers][] = pm_existing_pages_deploy__panel_context_0d3c4d30-03fc-4aa6-b8c6-7bb38713df93
 features[page_manager_pages][] = wetkit_deployment_source
 features[quicktabs][] = deployment_quicktabs
+features[variable][] = pm_existing_pages_disabled_deploy
 features[variable][] = workbench_moderation_default_state_deploy_content_moderated
 features[variable][] = workbench_moderation_default_state_deploy_content_simple
 features[views_view][] = deployment_administration_beans
