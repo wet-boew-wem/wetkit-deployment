@@ -20,6 +20,8 @@ function wetkit_deployment_source_views_pre_view($view, &$display_id, &$args) {
   // Perform logic specific deploy views.
   $views = array(
     'deployment_administration_files',
+    'deployment_administration_field_collection',
+    'deployment_administration_menu_links',
     'deployment_administration_taxonomy',
     'deployment_administration_users',
   );
@@ -34,5 +36,22 @@ function wetkit_deployment_source_views_pre_view($view, &$display_id, &$args) {
         $view->add_item('panel_pane_1', 'header', 'views', 'area', array('content' => $content, 'format' => 'wetkit_wysiwyg_text'));
       }
     }
+  }
+}
+
+/**
+ * Implements hook_views_query_alter().
+ */
+function wetkit_deployment_source_views_query_alter(&$view, &$query) {
+  if ($view->name == 'deployment_administration_menu_links') {
+    $query->where[] = array(
+      'conditions' => array(array(
+        'field' => 'menu_links.language',
+        'value' => array('***CURRENT_LANGUAGE***'),
+        'operator' => 'in',
+      )),
+      'args' => array(),
+      'type' => 'AND',
+    );
   }
 }

@@ -193,6 +193,136 @@ function wetkit_deployment_source_views_default_views() {
   $export['deployment_administration_beans'] = $view;
 
   $view = new view();
+  $view->name = 'deployment_administration_field_collection';
+  $view->description = 'Find and manage Field Collection for deployment.';
+  $view->tag = 'deployment';
+  $view->base_table = 'field_collection_item';
+  $view->human_name = 'Administration: Deployment Field Collection';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['css_class'] = 'admin-views-view';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '50';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'item_id' => 'item_id',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'item_id' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  /* No results behavior: Global: Unfiltered text */
+  $handler->display->display_options['empty']['area_text_custom']['id'] = 'area_text_custom';
+  $handler->display->display_options['empty']['area_text_custom']['table'] = 'views';
+  $handler->display->display_options['empty']['area_text_custom']['field'] = 'area_text_custom';
+  $handler->display->display_options['empty']['area_text_custom']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area_text_custom']['content'] = 'No Field Collection items available.';
+  /* Field: Bulk operations: Field collection item */
+  $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'field_collection_item';
+  $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['display_type'] = '0';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['enable_select_all_pages'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['row_clickable'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '10';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
+    'action::deploy_plus_plan_action' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 1,
+      'override_label' => 0,
+      'label' => '',
+    ),
+  );
+  /* Field: Field collection item: Rendered Field collection item */
+  $handler->display->display_options['fields']['rendered_entity']['id'] = 'rendered_entity';
+  $handler->display->display_options['fields']['rendered_entity']['table'] = 'views_entity_field_collection_item';
+  $handler->display->display_options['fields']['rendered_entity']['field'] = 'rendered_entity';
+  $handler->display->display_options['fields']['rendered_entity']['label'] = 'Entity Label';
+  $handler->display->display_options['fields']['rendered_entity']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['rendered_entity']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['rendered_entity']['bypass_access'] = 0;
+  /* Field: Field collection item: Field name */
+  $handler->display->display_options['fields']['field_name']['id'] = 'field_name';
+  $handler->display->display_options['fields']['field_name']['table'] = 'field_collection_item';
+  $handler->display->display_options['fields']['field_name']['field'] = 'field_name';
+  $handler->display->display_options['fields']['field_name']['machine_name'] = TRUE;
+  /* Field: Field collection item: URL */
+  $handler->display->display_options['fields']['url']['id'] = 'url';
+  $handler->display->display_options['fields']['url']['table'] = 'views_entity_field_collection_item';
+  $handler->display->display_options['fields']['url']['field'] = 'url';
+  $handler->display->display_options['fields']['url']['link_to_entity'] = 0;
+  /* Filter criterion: Field collection item: Field collection item UUID */
+  $handler->display->display_options['filters']['uuid']['id'] = 'uuid';
+  $handler->display->display_options['filters']['uuid']['table'] = 'field_collection_item';
+  $handler->display->display_options['filters']['uuid']['field'] = 'uuid';
+  $handler->display->display_options['filters']['uuid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['uuid']['expose']['operator_id'] = 'uuid_op';
+  $handler->display->display_options['filters']['uuid']['expose']['label'] = 'UUID';
+  $handler->display->display_options['filters']['uuid']['expose']['operator'] = 'uuid_op';
+  $handler->display->display_options['filters']['uuid']['expose']['identifier'] = 'uuid';
+  $handler->display->display_options['filters']['uuid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+  );
+  $handler->display->display_options['filters']['uuid']['expose']['autocomplete_items'] = '10';
+  $handler->display->display_options['filters']['uuid']['expose']['autocomplete_min_chars'] = '0';
+  $handler->display->display_options['filters']['uuid']['expose']['autocomplete_raw_suggestion'] = 1;
+  $handler->display->display_options['filters']['uuid']['expose']['autocomplete_raw_dropdown'] = 1;
+  $handler->display->display_options['filters']['uuid']['expose']['autocomplete_dependent'] = 0;
+
+  /* Display: Content pane */
+  $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
+  $translatables['deployment_administration_field_collection'] = array(
+    t('Master'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« first'),
+    t('‹ previous'),
+    t('next ›'),
+    t('last »'),
+    t('No Field Collection items available.'),
+    t('Field collection item'),
+    t('- Choose an operation -'),
+    t('Entity Label'),
+    t('Field name'),
+    t('URL'),
+    t('UUID'),
+    t('Content pane'),
+    t('View panes'),
+  );
+  $export['deployment_administration_field_collection'] = $view;
+
+  $view = new view();
   $view->name = 'deployment_administration_files';
   $view->description = 'Find and manage files for deployment';
   $view->tag = 'deployment';
@@ -450,6 +580,241 @@ function wetkit_deployment_source_views_default_views() {
     t('View panes'),
   );
   $export['deployment_administration_files'] = $view;
+
+  $view = new view();
+  $view->name = 'deployment_administration_menu_links';
+  $view->description = 'Find and manage Menu Links for deployment.';
+  $view->tag = 'default';
+  $view->base_table = 'menu_links';
+  $view->human_name = 'Administration: Deployment Menu Links';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['css_class'] = 'admin-views-view';
+  $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '50';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'views_bulk_operations' => 'views_bulk_operations',
+    'link_title' => 'link_title',
+    'link_path' => 'link_path',
+    'link_title_1' => 'link_title_1',
+    'mlid' => 'mlid',
+    'menu_name' => 'menu_name',
+    'rendered_entity' => 'rendered_entity',
+    'url' => 'url',
+  );
+  $handler->display->display_options['style_options']['default'] = 'link_title';
+  $handler->display->display_options['style_options']['info'] = array(
+    'views_bulk_operations' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'link_title' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'link_path' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'link_title_1' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'mlid' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'menu_name' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'rendered_entity' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'url' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  /* No results behavior: Global: Unfiltered text */
+  $handler->display->display_options['empty']['area_text_custom']['id'] = 'area_text_custom';
+  $handler->display->display_options['empty']['area_text_custom']['table'] = 'views';
+  $handler->display->display_options['empty']['area_text_custom']['field'] = 'area_text_custom';
+  $handler->display->display_options['empty']['area_text_custom']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area_text_custom']['content'] = 'No menu links available.';
+  /* Field: Bulk operations: Menu link */
+  $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'menu_links';
+  $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['display_type'] = '0';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['enable_select_all_pages'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['row_clickable'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '10';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
+    'action::deploy_plus_plan_action' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 1,
+      'override_label' => 0,
+      'label' => '',
+    ),
+  );
+  /* Field: Menu link: Link_title */
+  $handler->display->display_options['fields']['link_title']['id'] = 'link_title';
+  $handler->display->display_options['fields']['link_title']['table'] = 'menu_links';
+  $handler->display->display_options['fields']['link_title']['field'] = 'link_title';
+  $handler->display->display_options['fields']['link_title']['label'] = 'Link Title';
+  /* Field: Menu link: Link_path */
+  $handler->display->display_options['fields']['link_path']['id'] = 'link_path';
+  $handler->display->display_options['fields']['link_path']['table'] = 'menu_links';
+  $handler->display->display_options['fields']['link_path']['field'] = 'link_path';
+  $handler->display->display_options['fields']['link_path']['label'] = 'Link Path';
+  /* Field: Menu link: Menu_name */
+  $handler->display->display_options['fields']['menu_name']['id'] = 'menu_name';
+  $handler->display->display_options['fields']['menu_name']['table'] = 'menu_links';
+  $handler->display->display_options['fields']['menu_name']['field'] = 'menu_name';
+  $handler->display->display_options['fields']['menu_name']['label'] = 'Menu Name';
+  /* Field: Menu link: URL */
+  $handler->display->display_options['fields']['url']['id'] = 'url';
+  $handler->display->display_options['fields']['url']['table'] = 'views_entity_menu_link';
+  $handler->display->display_options['fields']['url']['field'] = 'url';
+  $handler->display->display_options['fields']['url']['link_to_entity'] = 1;
+  /* Filter criterion: Menu link: Link_title */
+  $handler->display->display_options['filters']['link_title']['id'] = 'link_title';
+  $handler->display->display_options['filters']['link_title']['table'] = 'menu_links';
+  $handler->display->display_options['filters']['link_title']['field'] = 'link_title';
+  $handler->display->display_options['filters']['link_title']['group'] = 1;
+  $handler->display->display_options['filters']['link_title']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['link_title']['expose']['operator_id'] = 'link_title_op';
+  $handler->display->display_options['filters']['link_title']['expose']['label'] = 'Link Title';
+  $handler->display->display_options['filters']['link_title']['expose']['operator'] = 'link_title_op';
+  $handler->display->display_options['filters']['link_title']['expose']['identifier'] = 'link_title';
+  $handler->display->display_options['filters']['link_title']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+  );
+  $handler->display->display_options['filters']['link_title']['expose']['autocomplete_items'] = '10';
+  $handler->display->display_options['filters']['link_title']['expose']['autocomplete_min_chars'] = '0';
+  $handler->display->display_options['filters']['link_title']['expose']['autocomplete_field'] = 'link_title';
+  $handler->display->display_options['filters']['link_title']['expose']['autocomplete_raw_suggestion'] = 1;
+  $handler->display->display_options['filters']['link_title']['expose']['autocomplete_raw_dropdown'] = 1;
+  $handler->display->display_options['filters']['link_title']['expose']['autocomplete_dependent'] = 0;
+  /* Filter criterion: Menu link: Link_path */
+  $handler->display->display_options['filters']['link_path']['id'] = 'link_path';
+  $handler->display->display_options['filters']['link_path']['table'] = 'menu_links';
+  $handler->display->display_options['filters']['link_path']['field'] = 'link_path';
+  $handler->display->display_options['filters']['link_path']['operator'] = 'contains';
+  $handler->display->display_options['filters']['link_path']['group'] = 1;
+  $handler->display->display_options['filters']['link_path']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['link_path']['expose']['operator_id'] = 'link_path_op';
+  $handler->display->display_options['filters']['link_path']['expose']['label'] = 'Link_path';
+  $handler->display->display_options['filters']['link_path']['expose']['operator'] = 'link_path_op';
+  $handler->display->display_options['filters']['link_path']['expose']['identifier'] = 'link_path';
+  $handler->display->display_options['filters']['link_path']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+  );
+  $handler->display->display_options['filters']['link_path']['expose']['autocomplete_items'] = '10';
+  $handler->display->display_options['filters']['link_path']['expose']['autocomplete_min_chars'] = '0';
+  $handler->display->display_options['filters']['link_path']['expose']['autocomplete_field'] = 'link_path';
+  $handler->display->display_options['filters']['link_path']['expose']['autocomplete_raw_suggestion'] = 1;
+  $handler->display->display_options['filters']['link_path']['expose']['autocomplete_raw_dropdown'] = 1;
+  $handler->display->display_options['filters']['link_path']['expose']['autocomplete_dependent'] = 0;
+  /* Filter criterion: Menu link: Menu_name */
+  $handler->display->display_options['filters']['menu_name']['id'] = 'menu_name';
+  $handler->display->display_options['filters']['menu_name']['table'] = 'menu_links';
+  $handler->display->display_options['filters']['menu_name']['field'] = 'menu_name';
+  $handler->display->display_options['filters']['menu_name']['value'] = array(
+    'menu-wet-footer' => 'menu-wet-footer',
+    'menu-wet-header' => 'menu-wet-header',
+    'main-menu' => 'main-menu',
+    'menu-wet-mid-footer' => 'menu-wet-mid-footer',
+    'sidebar' => 'sidebar',
+    'menu-wet-terms' => 'menu-wet-terms',
+  );
+  $handler->display->display_options['filters']['menu_name']['group'] = 1;
+  $handler->display->display_options['filters']['menu_name']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['menu_name']['expose']['operator_id'] = 'menu_name_op';
+  $handler->display->display_options['filters']['menu_name']['expose']['label'] = 'Menu_name';
+  $handler->display->display_options['filters']['menu_name']['expose']['operator'] = 'menu_name_op';
+  $handler->display->display_options['filters']['menu_name']['expose']['identifier'] = 'menu_name';
+  $handler->display->display_options['filters']['menu_name']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+  );
+  $handler->display->display_options['filters']['menu_name']['expose']['reduce'] = TRUE;
+
+  /* Display: Content pane */
+  $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
+  $translatables['deployment_administration_menu_links'] = array(
+    t('Master'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« first'),
+    t('‹ previous'),
+    t('next ›'),
+    t('last »'),
+    t('No menu links available.'),
+    t('Menu link'),
+    t('- Choose an operation -'),
+    t('Link Title'),
+    t('Link Path'),
+    t('Menu Name'),
+    t('URL'),
+    t('Link_path'),
+    t('Menu_name'),
+    t('Content pane'),
+    t('View panes'),
+  );
+  $export['deployment_administration_menu_links'] = $view;
 
   $view = new view();
   $view->name = 'deployment_administration_nodes';
@@ -887,28 +1252,29 @@ function wetkit_deployment_source_views_default_views() {
   $handler->display->display_options['arguments']['machine_name']['specify_validation'] = TRUE;
   $handler->display->display_options['arguments']['machine_name']['validate']['fail'] = 'ignore';
   $handler->display->display_options['arguments']['machine_name']['limit'] = '0';
-  /* Filter criterion: Taxonomy term: Vocabulary */
-  $handler->display->display_options['filters']['vid']['id'] = 'vid';
-  $handler->display->display_options['filters']['vid']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['filters']['vid']['field'] = 'vid';
-  $handler->display->display_options['filters']['vid']['group'] = '0';
-  $handler->display->display_options['filters']['vid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['vid']['expose']['operator_id'] = 'vid_op';
-  $handler->display->display_options['filters']['vid']['expose']['label'] = 'Vocabulary';
-  $handler->display->display_options['filters']['vid']['expose']['operator'] = 'vid_op';
-  $handler->display->display_options['filters']['vid']['expose']['identifier'] = 'vid';
-  $handler->display->display_options['filters']['vid']['expose']['remember'] = TRUE;
   /* Filter criterion: Taxonomy term: Name */
   $handler->display->display_options['filters']['name']['id'] = 'name';
   $handler->display->display_options['filters']['name']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['filters']['name']['field'] = 'name';
   $handler->display->display_options['filters']['name']['operator'] = 'word';
+  $handler->display->display_options['filters']['name']['group'] = 1;
   $handler->display->display_options['filters']['name']['exposed'] = TRUE;
   $handler->display->display_options['filters']['name']['expose']['operator_id'] = 'name_op';
   $handler->display->display_options['filters']['name']['expose']['label'] = 'Name';
   $handler->display->display_options['filters']['name']['expose']['operator'] = 'name_op';
   $handler->display->display_options['filters']['name']['expose']['identifier'] = 'name';
   $handler->display->display_options['filters']['name']['expose']['remember'] = TRUE;
+  /* Filter criterion: Taxonomy term: Vocabulary */
+  $handler->display->display_options['filters']['vid']['id'] = 'vid';
+  $handler->display->display_options['filters']['vid']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['filters']['vid']['field'] = 'vid';
+  $handler->display->display_options['filters']['vid']['group'] = 1;
+  $handler->display->display_options['filters']['vid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['vid']['expose']['operator_id'] = 'vid_op';
+  $handler->display->display_options['filters']['vid']['expose']['label'] = 'Vocabulary';
+  $handler->display->display_options['filters']['vid']['expose']['operator'] = 'vid_op';
+  $handler->display->display_options['filters']['vid']['expose']['identifier'] = 'vid';
+  $handler->display->display_options['filters']['vid']['expose']['remember'] = TRUE;
 
   /* Display: Content pane */
   $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
@@ -931,8 +1297,8 @@ function wetkit_deployment_source_views_default_views() {
     t('All'),
     t('Terms in %1'),
     t('%1'),
-    t('Vocabulary'),
     t('Name'),
+    t('Vocabulary'),
     t('Content pane'),
     t('View panes'),
   );

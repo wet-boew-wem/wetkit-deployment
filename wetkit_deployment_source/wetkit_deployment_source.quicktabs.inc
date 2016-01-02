@@ -59,6 +59,22 @@ function wetkit_deployment_source_quicktabs_default_quicktabs() {
       'weight' => '-96',
       'type' => 'view',
     ),
+    5 => array(
+      'vid' => 'deployment_administration_menu_links',
+      'display' => 'panel_pane_1',
+      'args' => '',
+      'title' => 'Menu Links',
+      'weight' => '-95',
+      'type' => 'view',
+    ),
+    6 => array(
+      'vid' => 'deployment_administration_field_collection',
+      'display' => 'panel_pane_1',
+      'args' => '',
+      'title' => 'Field Collection',
+      'weight' => '-94',
+      'type' => 'view',
+    ),
   );
   $quicktabs->renderer = 'quicktabs';
   $quicktabs->style = 'WetKit Tabs';
@@ -69,7 +85,9 @@ function wetkit_deployment_source_quicktabs_default_quicktabs() {
   t('Beans');
   t('Content');
   t('Deployment Sections');
+  t('Field Collection');
   t('Files');
+  t('Menu Links');
   t('Taxonomy');
   t('Users');
 
