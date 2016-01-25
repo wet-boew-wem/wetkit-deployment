@@ -16,6 +16,7 @@ projects[deploy][patch][2638954] = http://drupal.org/files/issues/deleted_node_r
 projects[deploy_plus][version] = 2.1
 projects[deploy_plus][subdir] = contrib
 projects[deploy_plus][patch][2638866] = http://drupal.org/files/issues/ctools_content_type-2638866-3.patch
+projects[deploy_plus][patch][2655888] = http://drupal.org/files/issues/fix_version_contraint-2655888-2.patch
 
 projects[deploy_services_client][version] = 1.0-beta2
 projects[deploy_services_client][subdir] = contrib
