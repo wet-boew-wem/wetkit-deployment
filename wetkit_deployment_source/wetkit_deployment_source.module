@@ -98,6 +98,18 @@ function wetkit_deployment_source_entity_delete($entity, $type) {
   }
 }
 
+/*
+ * Implements hook_media_parse().
+ */
+function wetkit_deployment_source_media_parse($url) {
+  // Workaround for Big Files using Import Media from F.S. + iNotify + Rsync.
+  if (variable_get('wetkit_deployment_source_file_contents_override', FALSE)) {
+    if (substr($url, 0, 21) === 'public://upload/media') {
+      return $url;
+    }
+  }
+}
+
 /**
  * Implements hook_deploy_entity_alter().
  */
@@ -110,6 +122,15 @@ function wetkit_deployment_source_deploy_entity_alter(&$entity, $entity_type) {
       ->condition('mlid', $entity->mlid);
     if ($item = $query->execute()->fetchAssoc()) {
       $entity->hidden  = $item['hidden'];
+    }
+  }
+
+  // Workaround for Big Files using Import Media from F.S. + iNotify + Rsync.
+  if ($entity_type == 'file' && variable_get('wetkit_deployment_source_file_contents_override', FALSE)) {
+    if (substr($entity->uri, 0, 21) === 'public://upload/media') {
+      if (isset($entity->file_contents)) {
+        unset($entity->file_contents);
+      }
     }
   }
 }
