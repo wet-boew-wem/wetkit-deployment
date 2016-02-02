@@ -472,3 +472,20 @@ function wetkit_deployment_source_deploy_manager_plan_get_options($args = array(
   }
   return $options;
 }
+
+/**
+ * Implements hook_form_alter().
+ */
+function wetkit_deployment_source_form_views_exposed_form_alter(&$form, &$form_state) {
+  if (substr($form['#id'], 0, 29) === 'views-exposed-form-deployment') {
+    $form['submit']['#attributes'] = array('class' => array('my-views-filter-submit'));
+    $submit_btn_id = $form['submit']['#id'];
+    if (!empty($submit_btn_id) && !empty($form['reset'])) {
+      // Add own reset button
+      $form['submit']['#suffix'] = '<button onclick="javascript:jQuery(this.form).clearForm();jQuery(this.form).find(\'#' . $submit_btn_id . '\').trigger(\'click\');return false;" class="btn btn-default form-submit ico-remove form-reset my-views-filter-reset">' . t('Reset') . '</button>';
+      // Remove the original RESET button.
+      unset($form['reset']);
+    }
+  }
+}
+
