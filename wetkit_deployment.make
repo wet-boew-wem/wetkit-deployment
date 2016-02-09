@@ -39,10 +39,8 @@ projects[quicktabs][version] = 3.6
 projects[quicktabs][subdir] = contrib
 projects[quicktabs][patch][1454486] = http://drupal.org/files/issues/quicktabs-tab-history-1454486-35.patch
 
-projects[services][version] = 3.12
+projects[services][version] = 3.13
 projects[services][subdir] = contrib
-projects[services][patch][2475119] = http://drupal.org/files/issues/services_wrong_function_call_in_node_resource-2475119-99.patch
-projects[services][patch][2480763] = http://drupal.org/files/issues/services_resource_admin_ui_styles_inheriting_from_theme-2480763-99.patch
 
 projects[shared_content][version] = 1.0-beta2
 projects[shared_content][subdir] = contrib
