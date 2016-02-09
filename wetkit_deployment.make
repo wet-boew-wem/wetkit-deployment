@@ -34,6 +34,7 @@ projects[entity_menu_links][patch][2622230] = http://drupal.org/files/issues/ent
 
 projects[environment_indicator][version] = 2.8
 projects[environment_indicator][subdir] = contrib
+projects[environment_indicator][patch][2207897] = https://drupal.org/files/issues/environment_indicator-2207897-9.patch
 
 projects[quicktabs][version] = 3.6
 projects[quicktabs][subdir] = contrib
