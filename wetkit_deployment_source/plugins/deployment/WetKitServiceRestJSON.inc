@@ -13,10 +13,9 @@ class WetKitServiceRestJSON extends DeployServiceRest {
       // Language Handling for Entity Translation.
       if (function_exists('entity_translation_enabled') && entity_translation_enabled($entity->__metadata['type'], $entity, TRUE)) {
         global $language;
-
         $tmp_url = parse_url($this->config['url']);
 
-        if ($entity->__metadata['type'] == 'taxonomy_term') {
+        if ($entity->__metadata['type'] == 'taxonomy_term' && !isset($entity->name_original)) {
           $url = $this->config['url'] . '/' . $entity->__metadata['uri'] . '.json';
         }
         else {
@@ -28,6 +27,8 @@ class WetKitServiceRestJSON extends DeployServiceRest {
           $this->config['url'] = $this->unparse_url($tmp_url);
         }
       }
+
+      // Language Handling for Menu Link.
       if ($entity->__metadata['type'] == 'menu_link') {
         global $language;
         $tmp_url = parse_url($this->config['url']);
