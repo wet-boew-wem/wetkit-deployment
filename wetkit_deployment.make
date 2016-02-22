@@ -45,7 +45,7 @@ projects[services][subdir] = contrib
 
 projects[shared_content][version] = 1.0-beta2
 projects[shared_content][subdir] = contrib
-projects[shared_content][patch][2628240] = http://drupal.org/files/issues/syndicated_to_site-2628240-2.patch
+projects[shared_content][patch][2628240] = http://drupal.org/files/issues/syndicated_to_site-2628240-5.patch
 
 projects[uuid_redirect][version] = 1.x-dev
 projects[uuid_redirect][subdir] = contrib
