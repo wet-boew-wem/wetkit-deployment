@@ -40,7 +40,7 @@ projects[quicktabs][version] = 3.6
 projects[quicktabs][subdir] = contrib
 projects[quicktabs][patch][1454486] = http://drupal.org/files/issues/quicktabs-tab-history-1454486-35.patch
 
-projects[services][version] = 3.13
+projects[services][version] = 3.14
 projects[services][subdir] = contrib
 
 projects[shared_content][version] = 1.0-beta2
