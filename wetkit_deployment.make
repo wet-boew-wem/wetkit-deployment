@@ -5,13 +5,12 @@ core = 7.x
 
 ; Modules for WetKit Deployment
 
-projects[deploy][version] = 2.0-beta1
+projects[deploy][version] = 2.0-beta2
 projects[deploy][subdir] = contrib
 projects[deploy][patch][1604938] = http://drupal.org/files/deploy-1604938_1.patch
 projects[deploy][patch][2092335] = http://drupal.org/files/deploy_new_alter_hook-2092335-4.patch
 projects[deploy][patch][2136595] = http://drupal.org/files/issues/helpful_helper_text-2136595-1.patch
 projects[deploy][patch][2604656] = http://drupal.org/files/issues/catch_exceptions-2604656-3.patch
-projects[deploy][patch][2638954] = http://drupal.org/files/issues/deleted_node_revisions-2638954-2.patch
 
 projects[deploy_plus][version] = 2.2
 projects[deploy_plus][subdir] = contrib
