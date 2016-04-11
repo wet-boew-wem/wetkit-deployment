@@ -46,9 +46,6 @@ projects[shared_content][version] = 1.0-beta2
 projects[shared_content][subdir] = contrib
 projects[shared_content][patch][2628240] = http://drupal.org/files/issues/syndicated_to_site-2628240-5.patch
 
-projects[uuid_redirect][version] = 1.x-dev
+projects[uuid_redirect][version] = 1.0-alpha1
 projects[uuid_redirect][subdir] = contrib
-projects[uuid_redirect][type] = module
-projects[uuid_redirect][download][type] = git
-projects[uuid_redirect][download][revision] = ce1ab849
-projects[uuid_redirect][download][branch] = 7.x-1.x
+projects[uuid_redirect][patch][1344672] = http://drupal.org/files/issues/patch_uuid_redirect_so-2704071-2.patch
