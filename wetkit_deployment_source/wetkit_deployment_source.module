@@ -43,6 +43,35 @@ function wetkit_deployment_source_menu() {
 }
 
 /**
+ * Implements hook_apps_app_info().
+ */
+function wetkit_deployment_source_apps_app_info() {
+  return array(
+    'configure form' => 'wetkit_deployment_source_configure_form',
+  );
+}
+
+/**
+ * Configuration Form for WetKit Deployment Source.
+ */
+function wetkit_deployment_source_configure_form($form, &$form_state) {
+  $form = array();
+  $form['wetkit_deployment_source'] = array(
+    '#title' => t('Deployment Settings'),
+    '#type'  => 'fieldset',
+    '#collapsible' => 'true',
+  );
+  $form['wetkit_deployment_source']['wetkit_deployment_source_ed_perf'] = array(
+    '#title' => t('Enable the Entity Dependency Query Alteration for Performance'),
+    '#type' => 'checkbox',
+    '#default_value' => variable_get('wetkit_deployment_source_ed_perf', FALSE),
+    '#description' => t('Do you want to enable the entity dependency query alteration for performance? (Experimental)'),
+  );
+
+  return system_settings_form($form);
+}
+
+/**
  * Implements hook_deploy_operation_info_alter().
  */
 function wetkit_deployment_deploy_operation_info_alter(&$operations, $plan_name = NULL) {
@@ -489,3 +518,38 @@ function wetkit_deployment_source_form_views_exposed_form_alter(&$form, &$form_s
   }
 }
 
+/**
+ * Implements hook_entity_dependencies_alter().
+ *
+ * Will only deploy dependencies that have not already been deployed
+ */
+function wetkit_deployment_source_entity_dependencies_alter(&$dependencies, $entity, $type) {
+  if (variable_get('wetkit_deployment_source_ed_perf', FALSE)) {
+    // Cycle through the dependencies and check if they are deployed.
+    foreach ($dependencies as $index => $dependency) {
+      $wrapper = entity_metadata_wrapper($dependency['type'], $dependency['id']);
+      $bundle = $wrapper->getBundle();
+      // Only look at dependencies that have the shared_content field.
+      if (field_info_instance($dependency['type'], 'field_shared_content', $bundle)) {
+        // EFQ to see if the dependency/content has been deployed.
+        $query = new EntityFieldQuery();
+        $query->entityCondition('entity_type', $dependency['type'], '=');
+        $query->entityCondition('entity_id', $dependency['id'], '=');
+        $query->fieldCondition('field_shared_content', 'value', TRUE, '=');
+        // Node must be published.
+        if ($dependency['type'] == 'node') {
+          $query->propertyCondition('status', 1);
+        }
+        // if the deploy to destination field exists, it must be checked/deployed.
+        if (field_info_instance($dependency['type'], 'field_deploy_to_destination_site', $bundle)) {
+          $query->fieldCondition('field_deploy_to_destination_site', 'value', TRUE, '=');
+        }
+        $result = $query->execute();
+        // If the query returns that the content has been deployed remove dependency.
+        if (isset($result[$dependency['type']]) && count($result[$dependency['type']]) == 1) {
+          unset($dependencies[$index]);
+        }
+      }
+    }
+  }
+}
