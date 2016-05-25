@@ -16,6 +16,7 @@ projects[deploy_plus][version] = 2.3
 projects[deploy_plus][subdir] = contrib
 projects[deploy_plus][patch][2638866] = http://drupal.org/files/issues/ctools_content_type-2638866-3.patch
 projects[deploy_plus][patch][2638916] = http://drupal.org/files/issues/align_deployment-2638916-14.patch
+projects[deploy_plus][patch][2638917] = http://drupal.org/files/issues/align_deployment-2638916-16.patch
 
 projects[deploy_services_client][version] = 1.0-beta2
 projects[deploy_services_client][subdir] = contrib
