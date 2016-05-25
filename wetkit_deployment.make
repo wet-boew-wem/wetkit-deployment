@@ -12,7 +12,7 @@ projects[deploy][patch][2092335] = http://drupal.org/files/deploy_new_alter_hook
 projects[deploy][patch][2136595] = http://drupal.org/files/issues/helpful_helper_text-2136595-1.patch
 projects[deploy][patch][2604656] = http://drupal.org/files/issues/catch_exceptions-2604656-3.patch
 
-projects[deploy_plus][version] = 2.2
+projects[deploy_plus][version] = 2.3
 projects[deploy_plus][subdir] = contrib
 projects[deploy_plus][patch][2638866] = http://drupal.org/files/issues/ctools_content_type-2638866-3.patch
 projects[deploy_plus][patch][2638916] = http://drupal.org/files/issues/align_deployment-2638916-14.patch
