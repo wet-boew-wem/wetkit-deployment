@@ -1353,6 +1353,9 @@ function wetkit_deployment_source_views_default_views() {
   /* Display: Content pane */
   $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '50';
   $translatables['deployment_administration_taxonomy'] = array(
     t('Defaults'),
     t('Terms'),
