@@ -118,7 +118,7 @@ function wetkit_deployment_source_views_default_views() {
   $handler->display->display_options['fields']['url']['table'] = 'views_entity_bean';
   $handler->display->display_options['fields']['url']['field'] = 'url';
   $handler->display->display_options['fields']['url']['link_to_entity'] = 0;
-  /* Field: Block: Changed */
+  /* Field: Block: Date changed */
   $handler->display->display_options['fields']['changed']['id'] = 'changed';
   $handler->display->display_options['fields']['changed']['table'] = 'bean';
   $handler->display->display_options['fields']['changed']['field'] = 'changed';
@@ -194,7 +194,7 @@ function wetkit_deployment_source_views_default_views() {
     t('Block Delta'),
     t('Title'),
     t('URL'),
-    t('Changed'),
+    t('Date changed'),
     t('Type'),
     t('Content pane'),
     t('View panes'),

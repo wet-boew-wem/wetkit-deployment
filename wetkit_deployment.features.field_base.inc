@@ -10,7 +10,7 @@
 function wetkit_deployment_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_deploy_to_destination_site'
+  // Exported field_base: 'field_deploy_to_destination_site'.
   $field_bases['field_deploy_to_destination_site'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -37,7 +37,7 @@ function wetkit_deployment_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_shared_content'
+  // Exported field_base: 'field_shared_content'.
   $field_bases['field_shared_content'] = array(
     'active' => 1,
     'cardinality' => 1,

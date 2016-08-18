@@ -10,7 +10,7 @@
 function wetkit_deployment_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-deploy_content_moderated-body'
+  // Exported field_instance: 'node-deploy_content_moderated-body'.
   $field_instances['node-deploy_content_moderated-body'] = array(
     'bundle' => 'deploy_content_moderated',
     'default_value' => NULL,
@@ -61,7 +61,7 @@ function wetkit_deployment_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-deploy_content_moderated-title_field'
+  // Exported field_instance: 'node-deploy_content_moderated-title_field'.
   $field_instances['node-deploy_content_moderated-title_field'] = array(
     'bundle' => 'deploy_content_moderated',
     'default_value' => NULL,
@@ -110,7 +110,7 @@ function wetkit_deployment_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-deploy_content_simple-body'
+  // Exported field_instance: 'node-deploy_content_simple-body'.
   $field_instances['node-deploy_content_simple-body'] = array(
     'bundle' => 'deploy_content_simple',
     'default_value' => NULL,
@@ -161,7 +161,7 @@ function wetkit_deployment_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-deploy_content_simple-title_field'
+  // Exported field_instance: 'node-deploy_content_simple-title_field'.
   $field_instances['node-deploy_content_simple-title_field'] = array(
     'bundle' => 'deploy_content_simple',
     'default_value' => NULL,
@@ -210,7 +210,7 @@ function wetkit_deployment_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-tags-description_field'
+  // Exported field_instance: 'taxonomy_term-tags-description_field'.
   $field_instances['taxonomy_term-tags-description_field'] = array(
     'bundle' => 'tags',
     'default_value' => NULL,
@@ -255,7 +255,7 @@ function wetkit_deployment_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-tags-name_field'
+  // Exported field_instance: 'taxonomy_term-tags-name_field'.
   $field_instances['taxonomy_term-tags-name_field'] = array(
     'bundle' => 'tags',
     'default_value' => NULL,
