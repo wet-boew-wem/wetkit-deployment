@@ -38,7 +38,7 @@ projects[environment_indicator][version] = 2.8
 projects[environment_indicator][subdir] = contrib
 projects[environment_indicator][patch][2207897] = http://drupal.org/files/issues/environment_indicator-2207897-9.patch
 
-projects[quicktabs][version] = 3.6
+projects[quicktabs][version] = 3.8
 projects[quicktabs][subdir] = contrib
 projects[quicktabs][patch][1454486] = http://drupal.org/files/issues/quicktabs-tab-history-1454486-35.patch
 
