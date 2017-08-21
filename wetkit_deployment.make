@@ -22,7 +22,7 @@ projects[deploy_services_client][version] = 1.0-beta2
 projects[deploy_services_client][subdir] = contrib
 projects[deploy_services_client][patch][2630504] = http://drupal.org/files/issues/support_for-2630504-2.patch
 
-projects[entity_dependency][version] = 1.0-alpha2
+projects[entity_dependency][version] = 1.0
 projects[entity_dependency][subdir] = contrib
 projects[entity_dependency][patch][1589794] = http://drupal.org/files/entity_dependency_iterator_documentation-1589794-1.patch
 projects[entity_dependency][patch][1590280] = http://drupal.org/files/entity_dependency_comment_typos-1590280-1.patch
